@@ -17,3 +17,9 @@
 * **Context:** Deciding where to store the single source of truth for the REST API shape.
 * **Decision:** The `opening-explorer` (backend) repository exclusively owns the API schema.
 * **Rationale:** Utilizing tools like Springdoc/Swagger, the backend can auto-generate the schema directly from the Java DTOs, preventing drift. The AI context repo will not duplicate this schema.
+
+## ADR-004: UI-Driven Backend Debugging (80% Backend Rule)
+* **Date:** 2026-10-10
+* **Context:** The backend tree-building logic has reached ~80% stability. Debugging complex recursive issues (transpositions, exploding trees, missing games) via raw JSON is extremely inefficient.
+* **Decision:** Pause deep backend optimization. Shift primary focus to the frontend `prepchess-ui` to finish building the visual tree explorer.
+* **Rationale:** Rendering the tree graphically in the frontend is the only practical way to visually expose and diagnose the remaining 20% of backend edge cases (e.g., parent-node mismatches and transposition errors).

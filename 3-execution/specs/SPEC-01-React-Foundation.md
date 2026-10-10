@@ -1,4 +1,5 @@
 # SPEC-01: React UI Foundation & Initial Scaffold
+> **Status:** IMPLEMENTED (See frontend `prepchess-ui` - currently on Stage 6)
 
 ## 1. Overview
 This specification defines the initial "Hello World" scaffolding phase for the **PrepChess** web client. The goal of this phase is to establish a solid, scalable, and secure React foundation that aligns perfectly with the Java/Spring Boot "Hollow Frontend" architecture defined in `prepchess-ai-context/CONTEXT.md`.
