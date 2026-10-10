@@ -39,8 +39,9 @@ flowchart TD
 
 ## 3. Database Schema Overview
 
-Migrated to PostgreSQL for multi-instance scaling and MVCC concurrency (`reWriteBatchedInserts=true`).
+Currently implemented using an **H2 Database** (file-based) coupled with a robust `BuildCheckpointService` for session resumption and async state persistence.
 
-* **Nodes Table:** `repertoire_nodes` tracks `session_id`, `parent_id`, `move_san`, `fen`, `mean_eval`, `std_dev_eval`, `player_sac`, `opp_sac`, `opp_play_prob`.
-* **Caching:** Caffeine holds active session trees in memory (`expireAfterAccess(15, TimeUnit.MINUTES)`), allowing slider tweaks to complete backpropagation in <15ms.
-* **O(N) Reconstruction:** Uses a single-pass `HashMap<Long, RepertoireNode>` to connect parents to children.
+* **Session Entities:** `BuildSessionEntity` tracks the lifecycle of an `IN_PROGRESS` repertoire run.
+* **Checkpointing Cache:** `ExploredFenEntity` and `EvaluatedFenEntity` track completed subtrees and FEN evaluations to allow instant O(1) skips across restarts.
+* **O(N) Reconstruction:** Uses a single-pass `HashMap<Long, RepertoireNode>` to connect parents to children during rendering.
+* **Future Scaling:** Migration to PostgreSQL (MVCC, `reWriteBatchedInserts=true`) is planned for MVP 2 to support multi-user concurrent generation.

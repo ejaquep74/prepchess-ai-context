@@ -6,11 +6,11 @@
 * **Decision:** We will use a strictly "Hollow Frontend" where the client only renders sanitized data (flags and badges).
 * **Rationale:** Protects the proprietary Multi-Objective Utility $U(n)$ coefficients and matrix scoring logic from being scraped or reverse-engineered via minified client bundles.
 
-## ADR-002: PostgreSQL Migration
-* **Date:** 2024
-* **Context:** The prototype MVP 1 utilized an H2 in-memory/file-based database. 
-* **Decision:** Migrated to PostgreSQL with Caffeine in-memory caching.
-* **Rationale:** H2 cannot support the MVCC row-level concurrency and batch writing optimizations (`reWriteBatchedInserts=true`) required for massive tree storage and concurrent multi-user load.
+## ADR-002: PostgreSQL Migration (PENDING)
+* **Date:** 2024 (Planned)
+* **Context:** The current MVP utilizes an H2 database coupled with a `BuildCheckpointService` for session resumption.
+* **Decision:** We will migrate to PostgreSQL with Caffeine in-memory caching.
+* **Rationale:** H2 cannot support the MVCC row-level concurrency and batch writing optimizations (`reWriteBatchedInserts=true`) required for massive tree storage and concurrent multi-user load in production.
 
 ## ADR-003: Backend Ownership of API Schema
 * **Date:** 2026-10
