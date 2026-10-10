@@ -1,0 +1,14 @@
+[credential "https://git-codecommit.us-east-1.amazonaws.com"]
+	provider = generic
+[core]
+	autocrlf = input
+[user]
+	email = ejaque74@gmail.com
+	name = Emilio Jaque
+[safe]
+	directory = %(prefix)///wsl.localhost/Ubuntu/var/www/html/masaudio/m
+	directory = %(prefix)///wsl.localhost/Ubuntu/var/www/html/heardrive
+[gui]
+	recentrepo = C:/Users/ejaqu/workspace-heardrive/hd-contacts
+[credential]
+	helper = /mnt/c/Program\\ Files/Git/mingw64/bin/git-credential-manager.exe
