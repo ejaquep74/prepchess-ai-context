@@ -46,5 +46,6 @@
 * **The "Walled Garden" Sparring Mode:**
   * Lock the "Mistake / Error" chapters inside the PrepChess web application.
   * Build the Interactive Sparring Mode where users play against the synthesized Maia-3 refutations natively in the browser.
+  * **AI Interactive Plans:** Implement the "Coach's Voice" feature where an LLM generates structured JSON to explain tactical plans while simultaneously rendering visual arrows and square highlights (e.g., outposts) on the frontend board.
 * **Automated Sync:**
   * Poll the Lichess/Chess.com APIs weekly to cross-reference user games against their PrepChess tree, automatically flagging deviations and missed tactical refutations.

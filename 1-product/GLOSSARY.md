@@ -11,7 +11,10 @@ To prevent AI hallucination and developer misalignment, all documentation, varia
 *   **Sinking Ship / Repertoire Hole:** A line where the user's historical data indicates a high probability of loss or a sudden evaluation drop-off.
 *   **Minefield:** A position with high Volatility ($\sigma$) where one mistake leads to severe punishment. 
 *   **Tightrope:** A position where Stockfish evaluates `0.00`, but only if the human plays 15 consecutive perfect moves. PrepChess penalizes tightropes.
+*   **Main Line (ML) vs. Deep Analysis (DA):** The distinction in how the engine explores the tree. *Main Lines* are standard user-explored paths, whereas *Deep Analysis* nodes are generated asynchronously to calculate deeper tactical metrics.
+*   **Transposition:** When the identical board position (FEN) is reached via a different sequence of moves. The system strictly deduplicates these (Cross-Branch Transposition Pruning) by referencing the original evaluated node to prevent exponential tree explosion.
 
 ### System Components
 *   **Hollow Frontend:** The React UI architecture. The UI performs NO repertoire math or evaluation. It only renders sanitized API data.
 *   **Taylor:** The user-facing mascot and "Psychology-Bot" that guides users.
+*   **Interactive Plan Explanations:** An AI-generated coach's voice synchronized with visual board indicators (arrows, highlighted outposts) to explain the structural goals of a position, rather than just listing raw moves.
