@@ -44,4 +44,4 @@ In addition to Human Eval and Sacrifices, the user has access to sliders to shap
 ## Visual UX Enhancements
 * **Clock Time Estimation:** The UI estimates the time on the clock for both players at any given node, parsed from Lichess PGN timestamps.
 * **Heatmaps:** Shows a heatmap overlay of the most visited moves and errors, guiding the user's study focus.
-* **Node Graph Visualization:** Users can swap the traditional PGN text box for an interactive D3 node-graph, where circles represent moves (sized by popularity), line thickness represents forced moves, and colors represent the Human Eval score.
+* **Node Graph Visualization (ALTERNATIVE IDEA):** While the primary focus remains on traditional PGN text, an interactive D3 node-graph may be added later as an alternative visualization, where circles represent moves (sized by popularity), line thickness represents forced moves, and colors represent the Human Eval score.
