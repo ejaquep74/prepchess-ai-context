@@ -1,0 +1,142 @@
+PEND NOW: Add to MoveNode in DB, the ECO code of the opening being explored... this is veru useful as in the future we can query MoveNodes that have same "short fen" for ... transpositions.
+
+PEND NOW: take my mail "Pawn Structured" and convert to pdf and process in my LLM to generate new plan of implementation. 
+
+****IDEA: Compare chessbook.com vs qchess.net to find out why the first, with more basic features, got much more success. Also notice its great UX
+
+****IDEA: Do not explor nodes up to a fixed depth, but expand futher if over the max accum prob for ultra leaf. I.e 0.8 % max
+
+****IDEA: NEW: Show 45 paen struxtures, undefined pawn struc and Rare Pawn St. We filter the lines while it kept eval less than 1 pawn diff. If the line stopped eraly and some pawn structs were reachable, it is undefined, proable not worth counting. The Rare pawn st are those that break a common pawn st, like a hedge hog were the pawn instead of a6 went to a5, the moment it break it, we could save it.... Anyway maybe better put them all in same group, the WEIRD ONES. We can count all nodes reachable by lines that are not in advg, and which pctg of those nodes reach each structure. The node will weigh the amount of games it has, so we will actually count games in leaf nodes. With leaf defined as rhe end of this "not advg" lines, abs eval < 1.0. NOTE: anyway, explore line up to  last node where eval<1.0
+
+
+****IDEA: Generate example-lines with tipica maneuvers, key squares etc, so when reviewing a PLAN, the user can do excercises when moving some piece as tipical move in the plan, is the best or good move, and also show COUNTER EXAMPLES when that same move is an error, the "excepcion" that teach you to be concrete
+
+****IDEA: Add a Secret Weapons section, when new sub variations of your current repertoire are being trained, add a progress bar, so when you reach 80%, you are ready to play it online.
+
+***IDEA: show the user the tipical errors, with options to filter by attacking piece, motif (i.e. pinned piece), etc.  TThe idea is to train focused.
+
+*IDEA: integrate coaches in the loop, so they can see students progress in openings, vatiations, structures, etc
+
+****IDEA: Focus on unique things: tactical and postitional exercises in my variations, be the chesstempo of openins. Create rare lines with high win ratio in their preferred pawn structures or patterns. Suggest new opening or subvariations of their own, but always say why... for ex becuz it uses same pawn structure, similar pawn breaks, is more positional, etc. We mist find a relation between his success in openings vs patterns and atructures. So he has confidence we know him, we tailor make his repetoire evolution. Primote sharing like a trap his opp fell in his new variation, or his new study plan generated in lichess.
+
+****IDEA: para contabilizar patrones utiles, puedo usar el backpropagation e ir marcando por ej si un Caballo blanco quedo fuerte en d6 (segun heuristica de SF), y la evaluacion marca ligera ventaja al menos, es una posicion "deseable". Entonces la marco como "Caballo fuerte en f6" e inicio el registro de ruta, que ire acumulando hacia abajo hasta llegar a casilla de origen, ej "f6-d4-f3". Asi puedo tambien contar las maniobras mas frecuentes. Adicionalmente . No siempre es bueno backpropagation si, pues para marcar "jugadas criticas" o "errores" es mas facil hacerlo cuando estas explotando el arbol por primera vez, en DFS, y puedes ver si solo una de las respuestas mantiene eval modulo o ver cuanto vario la eval respecto al padre para catalogar de error. Tambien un critica la puedes catalogar de brillante si haces la correcta y era algo que encuentran menos del 50% de la gente en ese rango elo.
+
+IDEA: para generar el PGN en mi app, ver el uso de la libreria react-d3-tree. Usar un selector con la profundidad deseada (ej. 16) y vision-adelante (ej. 4 movidas), Cuando se abra el PGN, todo lo que este a mas profundidad que eso , se colapsa. Pero como  estas recorriendo el arbol, el PGN debiera dinamicamente explandirse a medida que vas avanzando de modo que se segure que siempre tengas 4 movidas hacia adelante..... la explansion de esos nodos 4 movidas adelante no debiera alterar mucho el renderizado si se hace inteligentemente. Baiscament epartimos con una frontera en 16, y la vamos haciendo avanzar gradualmente hasta llegar a 25 (limite). Hay que ver como maneja cuando retrocedes... por que podrias ir cerrando los nodos (quiza encolando la accion de cerrar). Luego si saltas y clickeas on otra rama, nodo no ancestro, debiera dejarlo como estaba sin colapsar. Pero si salta y clickea un ancestro, si va y colapsa todo, manteniendo prof deseada de 16, pero no teniendo mas de 4 movidas hacia abajo.
+
+IDEA: do batch queries to Gemini Pro 3.5  so we can have a good summary of the main opening variations, posibly all the ECO codes that have more than 2000 games in Masters DB, also incluso those ECO codes with less games but no ancestors. So for any node, we can search for the closest ancestor and show the plans of the opening.  We coud as gemini to format the moves as San Code + origin square + destSquare + piece captured (optional). If we get a list properly parsed we can easily build a database of maneuvers, key squares, pawn breaks etc, that we can later check against what our automatic search is producing.
+
+IDEA: categoriza erros using pawn structure and controlled square, so the same move Ne4 in a carlsbad, is the only move that works in one position, but in another, it is an error (counter example)
+
+IDEA: Show the user the stats of his errors in lichess and chess.com categorized by pawn structure and heuristics (mobility, space, king safety etc). Use that tomfocus what he needs to practice most and to suggest new openings or new variations that have structures of heristics values where he is normally more efficient. always show examples so he realizes we are telling the truth. Do a contrast of where the move works, where the move fails, i mean show similar position were the same move to a key square (lets say Nfe5) in one position it gains mobility similar to the Nfe5, with same strong squares maybe... but in a few, it fails. you can filter this by the move (Nfef), the increase in mobility, king safety, etc so we can recogniza a similar move (maybe also use pawn structure), but very important:  the mistake must be popular becuz that indicates many people do it. Also give button for "Dig Deeper" so use can search for any error similar to that an train this positive/negative examples, we can have some algorith to mark two positions as "similar"
+
+IDEA: show estimated time in the clock for player and opp after move X. Also you add un you human style engine, the ability to simulate how much it takes on each move... We will use pgn timestamps thaf lichess provides
+
+IDEA: SHOW heatnap of most visisted moves, both in pgn and explorer table, so thenuser knows instantly where is he missing in study
+
+IDEA: Show the user the 5 most tipica structures in the opening, make mark the ones he prefers, then include in the metric, also give weight to preferred structures. See if you can include tipical plans separately, or that comes together with structure.
+
+IDEA: enfirce the 4 basic tips to learn openings: your plan vs opp plan, common best position for pieces, what are goid exchanges for you, common tactics. See video: https://youtu.be/we1V9qqSYv0?si=aPCr0BqbH9OMbccF
+
+
+END: verify backpropagation of sacrificaes and evals... just validate it works. For example if opponent has 2 replies... it should pick the one with best metric always... and that will propagate the metric.  In the case if sacrifices... it will propagate to parent the value of chosen node in repertoire (the one with best metric). In the future, when the metric is a mix of human-val, sacrificePctg, stdDev, you will propagate EACK METRIC individually so we can calculate on the fly the compund metric. That way we will always know each partial metric in each node. So metric should remain as attrib, but add new attring humanEval. But you NEED to know that these metrics are valid for the selected repertoire, with a single move in the turn of player... and multiple moves in the turn of opponent. If you check the metrics of an ALT move, you are considering that sub-tree also with no ALT moves for player, just picks one accorgint to best "compound" metric.
+
+
+IDEA:  Show instead of PGN... connected nodes, circles bigger for most popular moves, lines more thin/wide depending on forced moves... color depending on human eval, icons for scrifices, etc.  In that view you could swith to othe level of play, to see visually how graph mutates as higher level apperar, so some errors will be less common for exmaple.  Show move i.e. "Nf3" as text for each node, show mini board with pieces as you hover on nodes, etc
+
+IDEA: apply labels and attributes to positions, like label:pawn-struct-carlsbad label:greek-sac   or attrib:centrol_control:0.85    attrib:string-bishop:0.7 label:colum-control-rook label:pawn-break-d5  . For attribs you can use stockfish hce heuristics.  Wih this you can filter positions and show for example the position preceding a greek-sac where the move works, and other where it does not... so train the potential motif... but the user does not know if the pattern applies or not, has to learn subtlety. Combine with pieces and square involved, ie a x-ray attack of root in e1 over queen in e7, with night pinned on e4. That way you filter more precisely, maybe you can relax filter tomget more poaitions, i.e not include which piece/square is pinned.
+
+PEND: Clasificacion general de payrones tacticos y estrategicos. El método híbrido para la clasificación de patrones en ajedrez fusiona la precisión matemática de la programación clásica con la capacidad de abstracción de la inteligencia artificial. En lugar de depender exclusivamente de reglas manuales y etiquetas predefinidas, este enfoque busca descubrir la "esencia" geométrica y táctica de una posición. El objetivo es identificar tanto los motivos teóricos ya conocidos como aquellos patrones ocultos que los motores evalúan positivamente pero que la mente humana aún no ha categorizado, permitiendo agrupar posiciones por su similitud estructural profunda.
+El proceso funciona en tres grandes etapas conceptuales. Primero, se aplica un filtro geométrico estricto que "limpia" el tablero, eliminando las piezas irrelevantes para dejar únicamente la estructura o tensión que se desea analizar. Segundo, esta posición purificada se introduce en una red neuronal para extraer su representación vectorial, traduciendo la tensión posicional a coordenadas matemáticas multidimensionales. Finalmente, mediante algoritmos de agrupamiento espacial, el sistema evalúa la distancia entre estos vectores, agrupando automáticamente las posiciones que comparten el mismo ADN táctico.
+Para implementar esta arquitectura, existen diversas herramientas y proyectos de referencia clave. En la etapa de filtrado espacial y manejo de bitboards, se utilizan librerías base como python-chess o ChessLib. Para la vectorización y extracción de características mediante inteligencia artificial, los proyectos de referencia son ChessLM y el Stockfish NNUE Extractor jdart1/nnue. Por último, para indexar y agrupar los vectores generados a gran escala, se emplean motores de búsqueda vectorial especializados como FAISS o Milvus.
+
+
+**********
+Yes, there are a few highly specific open-source projects that have already cracked the code on extracting strategic heuristics (pawn structures, outposts, piece activity) directly from PGNs and move trees.
+Because you are likely looking for backend parsing logic (especially in Python, which is the dominant language for these specific repos), you don't need to write the extraction algorithms from scratch. You can look at the source code of these projects to see exactly how they mathematically define and extract these concepts.
+Here are the best open-source projects right now that take a PGN/FEN and output strategic insights:
+Look for *Chessbeast* at github, it uses stockfish and maia to explain lines of moves
+1. For Pure Positional Heuristics (Outposts & Structures)
+Project: codex-0915/chesslens (GitHub)
+What it does: It takes a PGN or Lichess username and runs a multi-dimensional analysis on the games. It specifically includes a "Positional & Strategy" module that explicitly extracts pawn structures, outposts, and piece activity.
+How to leverage it: While this is built as a zero-dependency browser app, you can strip its evaluation logic. Look at how it scans a position to tag a square as a true "outpost" or mathematically calculates which piece is the most "active." You can port this exact math into your Scala backend to generate your "Ghost Pieces" or "Target Squares."
+2. For AI "Commentator" Explanations
+Project: alipala/multiagent_llm_chess (GitHub)
+What it does: A Python-based project that uses LangChain and a custom multi-agent system. It specifically has a "Commentator Agent" and a "Black Player Agent" whose sole focus is solid pawn structure and strategic piece placement.
+How to leverage it: This project solves the LLM pipeline for you. If you want to feed your move tree into an AI and get back text like "Push this pawn to challenge the center," look at their RAG (Retrieval-Augmented Generation) implementation. They show you exactly how to feed the engine's positional assessment into the LLM prompt to get strategic text back.
+3. For Mathematical Move Explanations (Explainable AI)
+Project: fspinna/chessplainer (GitHub)
+What it does: A brilliant Python package that uses SHAP (SHapley Additive exPlanations) on top of Stockfish.
+Why it's useful: Instead of just saying a move is +1.5, it calculates exactly which pieces or squares contributed to that score. If you want to implement the "Find My Worst Piece" feature we discussed earlier, this repository has the exact math to do it. It proves mathematically which piece on the board is dragging the evaluation down the most.
+4. For Opening & Pawn Structure Dossiers
+Project: gaelazzo/python_chess (GitHub)
+What it does: A Python-based chess trainer that analyzes your PGNs. What makes it unique is that it specifically cross-references positions to generate an "opening ideas dossier for the current pawn structure".
+How to leverage it: It maps opening moves not just by variations, but by the resulting pawn skeleton. You can look at their parsing logic to see how they group different transpositions into a single strategic "pawn structure" concept.
+How to integrate this into your workflow:
+If you are running a JVM (Java/Scala) backend with Python scripts handling the data science/parsing side, I would recommend cloning chessplainer and python_chess. You can use Python to chew through your PGN move trees, extract the outposts and worst pieces, and package them into a clean JSON payload. Your main application can then just read that JSON to draw the arrows and highlight the red squares on the board.
+
+*******************************
+
+
+FRONTEND (public code):
+Nos basaremos en OpeningTree, pues GPL 3 no me obliga a publicar la parte backend, solo modificare esa parte de frontend y la conectare a una API propietaria.
+1. Stack Base de OpeningTree (Librerías Asociadas)
+ * React: Framework frontend sobre el cual está construida la interfaz web (SPA).
+ * chess.js: Librería para la lógica del juego, validación de movidas, manejo de notación FEN y parseo/generación de PGN.
+ * react-chessboard / chessboard.js: Componentes para renderizar el tablero de ajedrez interactivo.
+ * Axios / Fetch API: Para consumir las APIs públicas de Lichess y Chess.com (descarga de partidas e historial).
+ * Web Workers / Módulos JS Propios: Para procesar y construir el árbol de aperturas (client-side) sin congelar la interfaz.
+2. Otras Librerías y Tecnologías Alternativas Comentadas
+ * TypeScript: Para un tipado estricto de estructuras de datos (nodos, FEN, PGN).
+ * Vite: Bundler moderno para React como alternativa más rápida a Webpack/Babel.
+ * Zustand / Jotai: Para gestión de estado global liviano (navegación de variantes, estado del tablero).
+ * Tailwind CSS + shadcn/ui: Para el diseño estético de paneles, tablas de estadísticas y modales.
+ * TanStack Query (React Query): Para manejo de peticiones asíncronas, estado de carga y almacenamiento en caché de APIs de ajedrez.
+ * dexie.js (IndexedDB): Para persistencia local y rápida de PGNs o repertorios en el navegador.
+ * Google Firestore / Cloud SQL: Para almacenar datos o sincronizar estado si decides usar backend en Google Cloud.
+3. Librerias para PGN
+ * @mliebelt/pgn-parser: Carga el archivo PGN, extrae el árbol de variantes, los comentarios y las flechas de cada jugada.
+ * chess.js: Lo usas para validar si un movimiento manual del usuario en el tablero es legal antes de agregarlo al árbol.
+ * react-chessboard: Recibe la posición FEN actual y el array de flechas extraído por el parser para renderizarlos en pantalla.
+
+
+
+PENDING:
+* FIX NOW Ultimo issue con repertorio gigante de la Meran Acc. Ver porque genera solo una parte menor. Ojo que ya estamos dejando en bd evaluaciones usadas, pero quiza mejor eso migrarlo a bd lichess con evals en rocksDB
+* NOW Hacer sliders Human eval, Std Dev, Sacrifices
+* NOW Usar el Studio lichess como base. Dividir el rep en 3-4 grandes ramas y pa cada una listar principales errores de cada bando, solo para revisar. A futuro usarlo de training
+* Agregar otro slider sobre valor sorpresa. Solo faltaria usar calculo de prob acumulada ya tengo los datos
+* Agregar slider de facilidad memorizacion. Este requiere mas trabajo en el back porque tengo que evaluar cuantas jugadas promedio tiene que memorizar cada bando, algo asi como nodos totales del repertorio para cada lado, no se.
+
+
+¡Sí y no! Depende de la librería específica que estés mirando dentro de su stack:
+1. ¿Qué pasa con las librerías de OpeningTree?
+ * chess.js (La que usa OpeningTree):
+   * Soporte limitado: chess.js puede leer comentarios simples dentro de un PGN, pero su enfoque principal es la validación de movimientos y la lógica del tablero.
+   * El problema: No tiene una buena API integrada para estructurar y gestionar variantes complejas anidadas, símbolos de evaluación (como !, ?, ±), ni las etiquetas de dibujos visuales (%cal para flechas o %csl para casillas coloreadas).
+ * react-chessboard (El tablero):
+   * Soporta el renderizado de flechas y casillas si tú le pasas las coordenadas, pero no sabe nada de PGN. Tienes que ser tú quien extraiga esas flechas del PGN y se las entregue al componente.
+2. ¿Qué librería debes agregar para soportar anotaciones completas?
+Para construir algo al estilo Lichess Study en PrepChess, la mejor opción es sumar un parser/procesador de PGN especializado.
+La opción recomendada: @mliebelt/pgn-parser
+Es la librería estándar moderna más sólida en el ecosistema de TypeScript/JavaScript para manejar PGNs complejos.
+¿Por qué es perfecta para PrepChess?
+ * Soporta Variantes Anidadas: Parsea la estructura completa de árbol (jugadas principales y alternativas) y las entrega en un AST (Abstract Syntax Tree) muy fácil de recorrer.
+ * Comentarios y NAGs: Extrae comentarios de texto en cualquier jugada y los símbolos de evaluación/anotación ($1, $2, !, ?, ?!, etc.).
+ * Flechas y Colores (%cal / %csl): Lee y genera automáticamente los metadatos de las flechas y casillas pintadas en el formato estándar que usan Lichess y Chess.com.
+
+
+```
+
+#
+ 
+
+
+
+
+
+
+
+
+
+
+

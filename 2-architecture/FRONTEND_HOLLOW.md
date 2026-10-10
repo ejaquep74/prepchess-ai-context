@@ -14,3 +14,12 @@
 * **Prediction Error-Driven Learning:** The UI hides blunder continuations initially, prompting the user: *"Predict the opponent's common mistake here"* before showing the refutation.
 * **Contrastive Visual Encoding:** Side-by-side rendering comparing the **Book Move** vs. the **Blunder/Refutation**.
 * **Interleaved Active Recall:** Training decks mix Defensive Awareness and Offensive Refutation using an SM-2 / Leitner Spaced Repetition engine.
+
+
+## 4. Validated Technology Stack
+The "Hollow Frontend" relies on the following approved tools to handle chess logic and presentation without breaking the architectural constraints:
+* **Base Framework:** React + Vite, inspired by the GPL-3 `OpeningTree` codebase architecture.
+* **Chess Logic:** `chess.js` handles move validation and localized board logic.
+* **Board Rendering:** `react-chessboard` renders the FEN and graphical overlays (arrows/squares).
+* **PGN & Annotation Parsing (Crucial):** `@mliebelt/pgn-parser` is mandated for parsing backend-generated PGNs. Unlike `chess.js`, it natively builds an AST supporting deeply nested variations, comments, NAG evaluation symbols (`!`, `?`), and Lichess-style graphical arrow tags (`%cal`, `%csl`).
+* **Graph Rendering:** `react-d3-tree` is used to render the interactive node-graph alternative to standard PGN notation. The tree dynamically loads a vision-ahead of 4 moves while keeping a strict depth boundary (e.g., 16 moves) to prevent browser freezing.

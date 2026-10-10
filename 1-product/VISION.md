@@ -26,3 +26,22 @@ While the user experiences a friendly, interactive frontend guided by Taylor, th
 2.  **The Fitting:** Users adjust psychological sliders (Chaos, Aggression, Trickiness) to tailor their new repertoire.
 3.  **The Trap Lab:** Taylor guides users through spaced-repetition tactical drills based specifically on their tailored lines.
 4.  **Live Evolution:** Taylor continuously monitors live Lichess/Chess.com games to patch "seams" and "repertoire holes" automatically.
+
+
+## The Trap Lab & Pattern Training 
+Taylor guides users through spaced-repetition tactical drills. This includes **Counter-Example Training**, where users learn the subtleties of an idea by being shown a position where a typical maneuver works, contrasted directly against a similar position where it fails (due to minor pawn structure or square control differences).
+
+## Coach Integration & Ecosystem
+* **Coach Mode:** Chess coaches can integrate into the loop to track their students' progress in learning specific variations, typical errors, and structural proficiency.
+* **Secret Weapons Tracker:** A progress bar tracking the user's proficiency with new, rare sub-variations. Once the user hits 80% mastery in the spaced-repetition deck, the variation is flagged as "Ready for Online Play."
+
+## User Personalization & Sliders
+In addition to Human Eval and Sacrifices, the user has access to sliders to shape their repertoire recommendations:
+* **Preferred Pawn Structures:** Users select up to 5 typical structures they excel in, weighting the engine's choice towards those midgame skeletons.
+* **Surprise Value:** Ranks lines based on cumulative probabilities of occurrence, finding rare lines with high win ratios.
+* **Memorization Difficulty:** Calculates the raw branching factor and node count required to safely learn a line.
+
+## Visual UX Enhancements
+* **Clock Time Estimation:** The UI estimates the time on the clock for both players at any given node, parsed from Lichess PGN timestamps.
+* **Heatmaps:** Shows a heatmap overlay of the most visited moves and errors, guiding the user's study focus.
+* **Node Graph Visualization:** Users can swap the traditional PGN text box for an interactive D3 node-graph, where circles represent moves (sized by popularity), line thickness represents forced moves, and colors represent the Human Eval score.

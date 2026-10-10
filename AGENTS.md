@@ -8,7 +8,7 @@ This repository is the **Single Source of Truth (SSOT)** for the architecture, p
 **CRITICAL:** 
 - If you are an agent working in `prepchess-ui` (Frontend), read `1-product/VISION.md`, `1-product/GLOSSARY.md`, and `2-architecture/FRONTEND_HOLLOW.md`.
 - If you are an agent working in `opening-explorer` (Backend), read `1-product/GLOSSARY.md` and `2-architecture/BACKEND_ENGINE.md`.
-- **Discovery Rule:** DO NOT read the `0-discovery/` folder during normal coding sessions. It is a braindump for unapproved ideas. Only read it if the user explicitly asks for ideation, competitor analysis, or to process `***IDEA:` tags.
+- **Discovery Rule:** DO NOT read the `0-discovery/` folder during normal coding sessions. It is a braindump for unapproved ideas. Only read it if the user explicitly asks for ideation, competitor analysis, or to process `***IDEA:` tags. **Once ideas are processed, move the original files to `0-discovery/archive/` to prevent token waste and reprocessing.**
 - **Do not read files outside your domain** to preserve your context window.
 
 ## 2. The API Schema Rule

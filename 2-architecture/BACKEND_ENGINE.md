@@ -25,3 +25,18 @@ Where $P(a | v) = (\text{Games with move } a) / (\text{Total games in position }
 ## 3. Synthetic Refutation Pipeline (Maia-3)
 * **Sparse Data Handling:** When empirical game data lacks defensive continuations for rare 1-game blunders, the offline pipeline runs a modified **Maia-3 50-node Bounded Rationality Search**.
 * **Purpose:** Synthesize realistic human defense lines and their punishments to patch missing empirical data.
+
+
+## 4. MoveNode DB Schema Additions
+* **ECO Codes:** Every `MoveNode` stores the ECO code of the opening being explored. This facilitates querying for transpositions by matching short FENs across different opening branches.
+* **Granular Metric Storage:** Instead of only storing a static compound score, the DB stores the isolated metrics (`humanEval`, `sacrificePctg`, `stdDev`). This allows the frontend sliders to recalculate the compound metric on the fly.
+
+## 5. Dynamic Exploration Depth (Ultra-Leaf)
+Instead of capping tree exploration at a fixed arbitrary depth (e.g., 25 moves), the engine explores forward until the *cumulative probability* of reaching the node drops below a threshold (e.g., $< 0.8\%$), or until the absolute evaluation drops below 1.0 (indicating the end of a forced advantage line).
+
+## 6. Hybrid Pattern Extraction Pipeline (Vectorization)
+To categorize tactical motifs and structural heuristics without relying entirely on manual rules:
+1. **Geometric Filtering:** The board is stripped of irrelevant pieces using `python-chess` or `ChessLib`, isolating the core tension (e.g., just the pawn structure and attacking knights).
+2. **NNUE Vectorization:** The purified FEN is passed through a neural network (e.g., `ChessLM` or `jdart1/nnue`) to extract a multidimensional vector representing the position's "tactical DNA".
+3. **Clustering:** Vectors are indexed into a vector database (`FAISS` or `Milvus`). This allows the system to instantly find mathematically similar positions for Counter-Example training, grouping positions with the same structural DNA even if the exact pieces differ.
+4. **Maneuver Tracking:** The engine tracks and backpropagates highly effective piece routes (e.g., a knight maneuvering `f6-d4-f3`) and tags positions with specific heuristic attributes (`label:pawn-struct-carlsbad`, `attrib:center-control:0.85`).

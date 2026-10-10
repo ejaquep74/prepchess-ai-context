@@ -18,3 +18,10 @@ To prevent AI hallucination and developer misalignment, all documentation, varia
 *   **Hollow Frontend:** The React UI architecture. The UI performs NO repertoire math or evaluation. It only renders sanitized API data.
 *   **Taylor:** The user-facing mascot and "Psychology-Bot" that guides users.
 *   **Interactive Plan Explanations:** An AI-generated coach's voice synchronized with visual board indicators (arrows, highlighted outposts) to explain the structural goals of a position, rather than just listing raw moves.
+
+*   **Rare Pawn Structure:** A pawn skeleton that breaks common conventions (e.g., an early atypical pawn break in a Hedgehog) but holds statistical significance in the user's games.
+*   **Hybrid Pattern Vector:** A mathematical abstraction of a position's tension and structure, extracted by neutralizing irrelevant pieces and processing through an NNUE network. Used for positional clustering.
+*   **Compound Metric:** The final weighted score of a node calculated dynamically on the fly, composed of isolated metrics (Human Eval, Sacrifice Pctg, Std Dev, Surprise, Memorization Difficulty).
+*   **Counter-Example Training:** A learning mode where the user is shown a typical maneuver (e.g., `Nfe5`) in a position where it fails (due to structural differences) immediately after seeing where it succeeds.
+*   **Ultra-leaf threshold:** The depth expansion stopping condition based on cumulative probability (e.g., $< 0.8\%$ chance to reach) rather than a fixed node depth.
+*   **Maneuver Route:** The tracked sequential path of a critically active piece (e.g., `f6-d4-f3`), saved for pattern training.

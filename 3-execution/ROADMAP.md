@@ -49,3 +49,19 @@
   * **AI Interactive Plans:** Implement the "Coach's Voice" feature where an LLM generates structured JSON to explain tactical plans while simultaneously rendering visual arrows and square highlights (e.g., outposts) on the frontend board.
 * **Automated Sync:**
   * Poll the Lichess/Chess.com APIs weekly to cross-reference user games against their PrepChess tree, automatically flagging deviations and missed tactical refutations.
+
+
+---
+
+## MVP 4: Advanced AI Extraction & Pattern Training (Post-Beta)
+**Objective:** Replace hardcoded engine rules with vectorized AI pattern recognition and deliver the ultimate "Counter-Example" training loop to users.
+
+* **Vector Database Integration:**
+  * Implement the Hybrid Vector pipeline (Geometric Filter -> NNUE Vector -> FAISS/Milvus).
+  * Automatically group similar pawn structures and maneuver routes (e.g., `f6-d4-f3`).
+* **Batch AI Generation:**
+  * Use batch LLM processing (e.g., Gemini Pro) to parse all ECO codes with >2000 master games.
+  * Generate a structured JSON database of standard maneuvers, key squares, and typical pawn breaks for every major structure.
+* **The "Trap Lab" Expansion:**
+  * Build the "Counter-Example" training UI: Show a user where a move works, then immediately show a mathematically similar vector-position where the same move is a blunder.
+  * Build the "Secret Weapons" tracker UI, unlocking new variations for live play once the user reaches 80% mastery in spaced repetition.

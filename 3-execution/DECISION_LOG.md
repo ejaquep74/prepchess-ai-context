@@ -23,3 +23,16 @@
 * **Context:** The backend tree-building logic has reached ~80% stability. Debugging complex recursive issues (transpositions, exploding trees, missing games) via raw JSON is extremely inefficient.
 * **Decision:** Pause deep backend optimization. Shift primary focus to the frontend `prepchess-ui` to finish building the visual tree explorer.
 * **Rationale:** Rendering the tree graphically in the frontend is the only practical way to visually expose and diagnose the remaining 20% of backend edge cases (e.g., parent-node mismatches and transposition errors).
+
+
+## ADR-005: PGN Parser Selection
+* **Date:** 2026-10-10
+* **Context:** The frontend needs to render deeply annotated PGNs, including Lichess-style arrows (`%cal`) and nested variations.
+* **Decision:** We will use `@mliebelt/pgn-parser` instead of the default `chess.js` PGN parsing logic.
+* **Rationale:** `chess.js` lacks an Abstract Syntax Tree (AST) for deeply nested variations and does not natively parse graphical tags. `@mliebelt/pgn-parser` resolves this, allowing the frontend to remain hollow while rendering complex coach annotations.
+
+## ADR-006: Hybrid Vectorization for Positional Analysis
+* **Date:** 2026-10-10
+* **Context:** Manually coding heuristic rules to classify pawn structures and outposts is brittle and fails on slight piece variations.
+* **Decision:** Implement a Hybrid Vector extraction pipeline using NNUE (e.g., `jdart1/nnue` or `ChessLM`) and index positions into a Vector Database (FAISS/Milvus).
+* **Rationale:** This mathematically isolates the "tactical DNA" of a position, allowing the system to dynamically group similar positions for "Counter-Example Training" without relying on rigid FEN matching.
