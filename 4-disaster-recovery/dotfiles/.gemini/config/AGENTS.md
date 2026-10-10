@@ -11,6 +11,7 @@ When starting a chat always look for an AGENTS.md file in the root of the projec
  * **The Local vs. Global Rule:**
    * **Local Updates (Do Automatically):** If you add a new component, a new Java service, or check off a task, you MUST automatically update the local implementation docs (e.g., `docs/Architecture_and_Flows.md`, `docs/PLAN.md`, or `TODO.md`) inside the current workspace. Do not ask for permission.
    * **Global Updates (Prompt Required):** If a coding change breaks a core constraint (e.g., "Hollow Frontend"), introduces a new business term, or alters a major tech stack (e.g., migrating databases), you recognize this as a **Global Change**. You MUST stop and prompt the user: *"This changes the global architecture. Do I have permission to update `prepchess-ai-context` (e.g., `DECISION_LOG.md` or `SYSTEM_DESIGN.md`)?"*
+ * **Disaster Recovery Backup Rule:** Whenever you are given permission to modify this file (`~/.gemini/config/AGENTS.md`) or any other system file like `~/.bashrc` or `~/.gitconfig`, you MUST immediately execute `python3 /home/ejaque/projects/prepchess/prepchess-ai-context/scripts/backup-env.py` to ensure the changes are safely versioned. **If you modify a new system file that is not yet tracked, you must first edit `backup-env.py` to add the new file path to the `FILES_TO_BACKUP` array before running the script.**
  
  ## Tool and Permission Rules
  
