@@ -13,41 +13,29 @@ The assumption that Grandmasters simply memorize Stockfish's top choices is an a
 
 ChessGamma bridges the gap between engine truth and practical human victory—giving club players the psychological preparation tools previously reserved for elite Grandmaster teams.
 
-## The Mascot: Taylor the Assistant
-To provide a friendly, interactive user experience alongside the powerful ChessGamma engine, the application features a mascot named **Taylor**. 
-
-**Concept:**
-While the "Gamma" engine is an advanced AI, Taylor acts as the user-facing "Psychology-Bot" expert. While Stockfish represents a cold calculator spitting out 0.00 evaluations, Taylor is an expressive, sleek tech assistant that focuses entirely on human psychology.
-*   **Visuals (The Tape Measure):** Taylor wears a yellow "tailor's tape" sash. Why? Because Taylor is here to help you generate **tailor-made repertoires**. It bridges the gap between raw AI power and highly customized, human-centric learning.
-*   **Personality:** Taylor specializes in analyzing *human* behavior. Instead of providing dry computer lines, Taylor highlights human blunders, saying things like, *"The Gamma engine calls this equal, but my sensors show humans blunder here 40% of the time!"*
-*   **Interactive Role:** Taylor acts as the voice for the AI-Generated Plan Explanations, drawing arrows on the board in real-time, and dropping into the user's inbox to notify them of newly discovered "Repertoire Holes" from their overnight games.
-
-### Taylor's Voice & Contextual Lines
-Taylor's personality blends sharp competence with wry wit, humanizing deep psychological data:
-*   **The Greeting & Core Persona:**  
-    > *"Hi, I am Taylor! I am here to help you get a repertoire tailor-made just for you!"*
-*   **The Core Credo (In-App Persona):**  
-    > *"I am fluent in over 500 million positions of real humans under psychological stress. I can help you find the moves that really make them nervous."*
-*   **The Marketing Hook (Landing Page / Hero):**  
-    > *"I am fluent in over 500 million positions where humans cracked under pressure. Let's find the move that makes your opponent sweat."*
-*   **Sharp Move Tooltip (In-App Triggers):**  
-    > *"My database contains 500 million examples of human panic. Trust me: play this, and watch their clock run out."*
+## The Mascot: Gamma (The Wry Tactical Co-Pilot)
+To provide a friendly, empowering user experience, the application features a companion mascot named **Gamma**:
+* **Role:** The user-facing "Psychology-Bot" co-pilot who translates complex Expectiminimax math and human blunder distributions into actionable, human advice.
+* **Archetype:** A calm, hyper-competent tactical co-pilot whispering secret human intelligence in your ear (inspired by *JARVIS with dry chess wit*).
+* **Visuals:** Sleek, compact cyber-companion with reactive LED digital eyes (inspired by *EVE / Astro Bot*).
+* **Core Function:** Delivers X-Ray audits, draws synchronized arrows for tactical plans, and guides spaced-repetition drills with zero drama.
+* **Persona & Dialogue Specification:** See **[VISION-MASCOT.md](file:///home/ejaque/projects/prepchess/prepchess-ai-context/1-product/VISION-MASCOT.md)** for the complete personality rules, visual interaction design, and system prompt dialogue library.
 
 ## The "Practical Eval" Metric
 Instead of displaying a standard "Engine Eval", the most prominent metric in the UX is the **Practical Eval** (or **Human Eval**). This metric represents the backpropagated expected evaluation of an ultra-leaf node, mathematically factoring in the high probability of human opponents making mistakes. It visually contrasts with the standard engine evaluation to prove the immediate value of playing "tricky" human lines.
 
 ## The "Hollow Frontend" & Data Moat
-While the user experiences a friendly, interactive frontend guided by Taylor, the actual intelligence (Expectiminimax backpropagation, multi-objective utility scoring, volatility tracking) remains strictly locked in the Java 21 backend. This ensures the global position matrix and scoring algorithms cannot be reverse-engineered or scraped.
+While the user experiences a friendly, interactive frontend guided by Gamma, the actual intelligence (Expectiminimax backpropagation, multi-objective utility scoring, volatility tracking) remains strictly locked in the Java 21 backend. This ensures the global position matrix and scoring algorithms cannot be reverse-engineered or scraped.
 
 ## Product Loop (The ChessGamma Freemium Funnel)
-1.  **The Style Audit:** OAuth sync pulls recent games, Taylor highlights "Sinking Ships" and identifies the user's style.
+1.  **The Style Audit:** OAuth sync pulls recent games, Gamma highlights "Sinking Ships" and identifies the user's style.
 2.  **The Fitting:** Users adjust psychological sliders (Chaos, Aggression, Trickiness) to tailor their new repertoire.
-3.  **The Trap Lab:** Taylor guides users through spaced-repetition tactical drills based specifically on their tailored lines.
-4.  **Live Evolution:** Taylor continuously monitors live Lichess/Chess.com games to patch "seams" and "repertoire holes" automatically.
+3.  **The Trap Lab:** Gamma guides users through spaced-repetition tactical drills based specifically on their tailored lines.
+4.  **Live Evolution:** Gamma continuously monitors live Lichess/Chess.com games to patch "seams" and "repertoire holes" automatically.
 
 
 ## The Trap Lab & Pattern Training [PROPOSED TRAINING FEATURE]
-Taylor guides users through spaced-repetition tactical drills. This includes **Counter-Example Training**, where users learn the subtleties of an idea by being shown a position where a typical maneuver works, contrasted directly against a similar position where it fails (due to minor pawn structure or square control differences).
+Gamma guides users through spaced-repetition tactical drills. This includes **Counter-Example Training**, where users learn the subtleties of an idea by being shown a position where a typical maneuver works, contrasted directly against a similar position where it fails (due to minor pawn structure or square control differences).
 
 ## Coach Integration & Ecosystem [PROPOSED ECOSYSTEM]
 * **Coach Mode:** Chess coaches can integrate into the loop to track their students' progress in learning specific variations, typical errors, and structural proficiency.
@@ -98,7 +86,7 @@ Moves are contextualized with hyper-specific semantic tags (`is-sacrifice`, `is-
 ## Bridging the Middlegame Gap [PROPOSED FEATURE]
 Overcoming the "Opening-to-Middlegame Cliff":
 * **Tabiya Takeover (Targeted Sparring Mode):** Skip the first 10-15 moves and drop instantly into the Move 20 Tabiya against an Elo-calibrated bot to practice converting the resulting positional blueprint.
-* **Middlegame Mission Cards:** At the end of each generated opening line, Taylor presents a 3-bullet tactical checklist (e.g., *1. Primary Pawn Break: Prepare ...c5 before move 25; 2. Key Relocation: Route Nf6 via d7 to c5 outpost; 3. Counterplay Alert: Watch for White's b4-b5 push*).
+* **Middlegame Mission Cards:** At the end of each generated opening line, Gamma presents a 3-bullet tactical checklist (e.g., *1. Primary Pawn Break: Prepare ...c5 before move 25; 2. Key Relocation: Route Nf6 via d7 to c5 outpost; 3. Counterplay Alert: Watch for White's b4-b5 push*).
 * **Pawn Skeleton Clustering:** Systematically steer both White and Black repertoire responses into shared universal pawn structures (e.g., funneling multiple lines into Isolated Queen's Pawn structures) to drastically compress the total concepts a user must master.
 
 ## Anti-Pattern Training & Counter-Examples [PROPOSED FEATURE]
