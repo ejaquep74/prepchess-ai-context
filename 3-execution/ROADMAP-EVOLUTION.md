@@ -66,6 +66,7 @@ The primary business risk for PrepChess / ChessGamma is over-engineering deep ba
 | Phase | Commercial Theme | Key Focus |
 | :--- | :--- | :--- |
 | **MVP 1** | **Proof of Math** | Prove Practical Eval identifies human traps Stockfish 0.00 misses. |
+| **MVP 1.5** | **The Interactive Pilot** | Curated example lines: Explore Mode + Training Mode (Errors & Sacrifices). |
 | **MVP 2** | **The Conversion Machine** | X-Ray Audit $\to$ Contrast Cards $\to$ $9–$12/mo Paywall gate. |
 | **MVP 3** | **Viral Retention Loop** | Spaced Repetition + 80% Secret Weapons bar + Coach Ambassador pilot + Gauntlet links. |
 | **MVP 4** | **Pawn Harmonization & Coverage** | Opponent Memory Load badge + Pawn Skeleton clustering (slashing study fatigue). |

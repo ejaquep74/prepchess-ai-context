@@ -17,6 +17,26 @@
 
 ---
 
+## MVP 1.5: The Interactive Pilot (Internal Dogfooding)
+**Objective:** Deliver an end-to-end playable vertical slice on curated high-asymmetry example lines (e.g., Vienna Gambit, Smith-Morra, Fried Liver), proving the practical value of blunder exploitation and tactical sacrifices without external OAuth or billing dependencies.
+
+* **Move Table Telemetry & Visual Indicators:**
+  * Add visual icons in the explorer table for **Tactical Sacrifices** (🚨 / ⚡) and **Opponent Errors/Blunders** (⚠️ / 💥).
+  * Expose quick contextual action triggers ("Errors" and "Sacrifices" action buttons) on any evaluated position within example lines.
+* **Dedicated Asymmetry Views (Errors & Sacrifices):**
+  * Clicking "Errors" or "Sacrifices" routes to a dedicated **Tactical View**.
+  * **Explore Mode (Default):**
+    * Inspect the branch tree of common opponent blunders or candidate player sacrifices line-by-line.
+    * Real-time visual board arrows and Gamma co-pilot commentary highlighting why human opponents fail here.
+  * **Training Mode (Interactive Sparring):**
+    * Seamless toggle from Explore to Training on the same branch.
+    * Automatically pauses the board 1–2 plies before the critical inflection point.
+    * **The Challenge:** The user must guess the most common human blunder or find the tactical sacrifice and punishing refutation on the board.
+    * **Feedback Loop:** Gamma overlay provides instant, non-judgmental evaluation of the move ("no drama").
+* **Deliverable:** A fully interactive web prototype loaded with 5–10 curated example repertoires, ready for internal testing and friendly chess coach reviews.
+
+---
+
 ## MVP 2: The Core Product & "Aha!" Onboarding (Private Beta)
 **Objective:** Build the "Hollow Frontend," protect the IP, and implement the high-conversion onboarding flow to hook early testers (1600–2200 Elo).
 
