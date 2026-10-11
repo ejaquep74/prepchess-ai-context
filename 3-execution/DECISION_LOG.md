@@ -62,3 +62,13 @@
 * **Context:** Extracting actionable positional advice from hundreds of millions of moves requires isolating recurring piece maneuvers without manual hardcoding.
 * **Decision:** Utilize sequential pattern mining (PrefixSpan / N-grams) alongside differential occupancy heatmaps to mathematically extract "winning highways."
 * **Rationale:** Provides objective, data-backed maneuver paths that can be automatically converted into visual coach recommendations by Gamma.
+
+## ADR-011: Inflection Point Sparring & Pedagogical Evaluation Tolerance
+* **Date:** 2026-10-11
+* **Context:** Traditional chess training platforms either drop users into post-blunder tactical puzzles (reactive) or enforce dogmatic, single-move rote memorization from move 1 (Chessable's "Move Rejection Rage").
+* **Decision:** 
+  1. **Configurable Inflection Point Sparring:** Drop the player $N$ moves *before* the critical blunder or sacrifice occurs, forcing active game-readiness within the escalating tension.
+  2. **Pedagogical Blind Testing ("No Spoilers"):** Do not reveal beforehand whether the upcoming critical move is an opponent error or player blunder; challenge the user to play sound chess under pressure.
+  3. **Dynamic Evaluation Tolerance ($\le 0.5$ Eval Distance):** Accept alternative candidate moves that preserve dynamic advantage ($\le 0.5$ eval delta) with positive co-pilot feedback, rewarding strategic chess comprehension over single-path memorization.
+* **Rationale:** Solves the core user frustration in online chess education, drastically improving training retention and practical over-the-board transfer.
+
