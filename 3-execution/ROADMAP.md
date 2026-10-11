@@ -65,3 +65,9 @@
 * **The "Trap Lab" Expansion:**
   * Build the "Counter-Example" training UI: Show a user where a move works, then immediately show a mathematically similar vector-position where the same move is a blunder.
   * Build the "Secret Weapons" tracker UI, unlocking new variations for live play once the user reaches 80% mastery in spaced repetition.
+
+*   **Coach & Community Engagement:**
+    *   Deploy the B2B Coach Ambassador Program (free access for coaches and up to 20 students).
+    *   Launch viral community mechanics: The "Giant Killer" leaderboard and the shareable "Community Gauntlet" interactive links.
+*   **AI Commentary Pipeline:**
+    *   Implement the Metadata Injection orchestrator (linking Stockfish flags with opening tree metadata into prompt templates).

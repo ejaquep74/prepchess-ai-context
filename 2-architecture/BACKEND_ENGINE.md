@@ -40,3 +40,15 @@ To categorize tactical motifs and structural heuristics without relying entirely
 2. **NNUE Vectorization:** The purified FEN is passed through a neural network (e.g., `ChessLM` or `jdart1/nnue`) to extract a multidimensional vector representing the position's "tactical DNA".
 3. **Clustering:** Vectors are indexed into a vector database (`FAISS` or `Milvus`). This allows the system to instantly find mathematically similar positions for Counter-Example training, grouping positions with the same structural DNA even if the exact pieces differ.
 4. **Maneuver Tracking:** The engine tracks and backpropagates highly effective piece routes (e.g., a knight maneuvering `f6-d4-f3`) and tags positions with specific heuristic attributes (`label:pawn-struct-carlsbad`, `attrib:center-control:0.85`).
+
+
+## 7. Cross-Rating Elo Calibration [PROPOSED / EXPERIMENTAL]
+*   **Time Control Adjustment:** Adjust Blitz move probabilities using linear regression / ML to mimic Rapid/Classical human decision distributions.
+*   **Sparse 2500+ Projection:** Address sample scarcity at the 2500+ Elo tier (13M games vs. 160M games at 2200 Elo) by projecting the move probability drop-off curve from lower rating bands (2000, 2200) to adjust 2500+ estimations, while sourcing error refutations safely from high-eval 2200 games.
+
+## 8. Leaf-at-Move-20 Pruning [PROPOSED - ALTERNATIVE EXPLORATION STRATEGY]
+*   **Un-evaluated Branch Trimming:** When constructing trees up to move 20 using cloud/annotated evals, if a node before move 20 lacks children with evaluations, backpropagate and prune single-child predecessor chains. Ensures all backpropagated human evals originate from legitimate terminal evaluations.
+
+## 9. Hybrid Maia Bounded Search [PROPOSED ENHANCEMENT]
+*   **50-Node Bounded Rationality Search:** Construct a small 50-node candidate tree evaluated by Maia and tuned against empirical human blunder rates.
+*   **Positional Heuristic Stabilization:** Evaluate average positional/material heuristics across 3–4 plies. When heuristic values stabilize, Maia selects lines that mimic human positional logic while avoiding catastrophic tactical blunders in rare branches where empirical game data is missing.

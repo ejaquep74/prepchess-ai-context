@@ -47,3 +47,16 @@ ChessGamma (internal project: PrepChess) is a next-generation SaaS platform desi
 - **IP Theft:** Mitigated by the "Hollow Frontend" and sanitized API payloads (sending UI badges like "High Sharpness" rather than raw utility coefficients). API requests are also heavily rate-limited (Bucket4j + Redis) to prevent scraping.
 - **Database Bloat:** Current PostgreSQL + Caffeine strategy is highly efficient for session trees (~10MB for 50k nodes). The global 20-billion position matrix will use RocksDB + Zobrist hashes for 80% compression on cheap, bare-metal storage architecture.
 - **Stockfish Compliance:** Stockfish is isolated as a backend oracle via standard UCI/ProcessBuilder commands, keeping the proprietary system safely out of GPLv3 copyleft scope.
+
+
+## Expanded Competitive Landscape
+| Competitor | Core Flaw | PrepChess Advantage |
+|---|---|---|
+| **WhyThisMove** | Focuses on static move-by-move move explanation without personalized repertoire generation or opponent psychology. | **Psychological Tailoring:** Generates trees that exploit opponent blunders and align with user style. |
+| **Chessprep.io** | Traditional line builder lacking deep practical human evaluation and synthetic blunder generation. | **Expectiminimax + Maia-3:** Solves sparse human data with synthesized refutations. |
+| **Chessline** | Basic visual exploration without volatility metrics or automated repertoire repair. | **Continuous Evolution:** Live background syncing to plug repertoire holes automatically. |
+
+## Proposed Go-To-Market & Pricing [PROPOSED GTM]
+*   **Target Pricing:** Freemium conversion targeting $10 - $12 USD/month subscription (directly challenging Chessable's pricing tier).
+*   **B2B Coach Ambassador Program:** Direct outreach to chess coaches on Lichess/Chess.com offering free premium access for coaches plus up to 20 students to drive organic adoption.
+*   **Precalculated Foundation Trees:** Precomputing ~100 core master openings (covering 90% of typical amateur responses) ensures zero-latency client loads, while reserving cloud infrastructure for on-demand deep subvariant calculations.

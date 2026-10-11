@@ -45,3 +45,19 @@ In addition to Human Eval and Sacrifices, the user has access to sliders to shap
 * **Clock Time Estimation:** The UI estimates the time on the clock for both players at any given node, parsed from Lichess PGN timestamps.
 * **Heatmaps:** Shows a heatmap overlay of the most visited moves and errors, guiding the user's study focus.
 * **Node Graph Visualization (ALTERNATIVE IDEA):** While the primary focus remains on traditional PGN text, an interactive D3 node-graph may be added later as an alternative visualization, where circles represent moves (sized by popularity), line thickness represents forced moves, and colors represent the Human Eval score.
+
+
+## Advanced Repertoire Metrics [PROPOSED METRIC]
+*   **Repertoire Coverage:** The sum of cumulative move probabilities selected in the user's repertoire. Quantifies what fraction of real-world opponent lines are accounted for.
+*   **Opponent Memory Load:** Reversing the coverage calculation against the opponent: how many moves an opponent must memorize to achieve the same coverage against the user's repertoire. A high opponent memory load indicates a repertoire that is difficult to face practically.
+
+## Viral Community Features & "The IKEA Effect" [PROPOSED COMMUNITY FEATURE]
+To drive authentic viral sharing, gamification and leaderboards must reward the player's real-world execution rather than purely theoretical algorithmic settings:
+*   **The "Giant Killer" Board:** Ranks the largest Elo gap defeated in verified live games using a user's customized sideline (e.g., "1400 defeats 1850 in 14 moves using custom Vienna Trap").
+*   **The "Community Gauntlet":** A shareable interactive challenge link where users test their custom repertoire against the community. Tracks the survival rate (e.g., "Only 12% of challengers survived past move 15").
+*   **The "Trending Novelty" Index:** Allows users to publish high-win-rate, low-memory sidelines to a public lab. Displays crowdsourced live win rates across everyone playing the user's creation.
+
+## Training & UX Enhancements [PROPOSED TRAINING FEATURE]
+*   **Guess the Opponent's Move/Blunder:** Interactive review mode where users anticipate the opponent's most probable mistake (and test if they can refute it).
+*   **Transposition Path Inspector:** Identifies and groups disparate move orders converging on the identical `shortFEN`, highlighting where different paths lead to the same blunder or structural bottleneck.
+*   **Concentric Circles Sunburst View [ALTERNATIVE IDEA]:** An alternative visual representation displaying the repertoire as concentric circles (sunburst style), overlaying red dots for tactical mistakes and blue dots for sacrifice opportunities to highlight move density.

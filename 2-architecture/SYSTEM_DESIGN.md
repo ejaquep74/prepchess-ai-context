@@ -45,3 +45,27 @@ Currently implemented using an **H2 Database** (file-based) coupled with a robus
 * **Checkpointing Cache:** `ExploredFenEntity` and `EvaluatedFenEntity` track completed subtrees and FEN evaluations to allow instant O(1) skips across restarts.
 * **O(N) Reconstruction:** Uses a single-pass `HashMap<Long, RepertoireNode>` to connect parents to children during rendering.
 * **Future Scaling:** Migration to PostgreSQL (MVCC, `reWriteBatchedInserts=true`) is planned for MVP 2 to support multi-user concurrent generation.
+
+
+## 4. Metadata Injection Architecture for AI Commentary [PROPOSED ARCHITECTURE]
+
+To generate grandmaster-level natural language commentary without hallucinations or expensive client-side compute, the system implements the **Metadata Injection Pattern**:
+
+```mermaid
+flowchart LR
+    A["Board Position (FEN)"] --> B["Stockfish Engine (Grounding)"]
+    A --> C["Opening Tree Database (Metadata)"]
+    B -- "Numeric Score + Tactical Flags" --> D["Prompt Orchestrator"]
+    C -- "Theoretical Facts (Breaks, Maneuvers)" --> D
+    D --> E["LLM Commentator (Translator)"]
+    E --> F["Natural Language Explanation"]
+```
+
+### Pipeline Principles
+1. **Engine Grounding:** The LLM NEVER calculates moves or evaluates raw FENs. Stockfish provides structured numeric signals (e.g., `score: +0.6`, `flag: hanging_piece`).
+2. **Deterministic Metadata Injection:** Position nodes in relational storage (PostgreSQL per ADR-002) store structured theoretical attributes:
+   * `key_pawn_breaks`: Array of critical levers (e.g., `["d4", "c5"]`).
+   * `common_maneuvers`: Standard piece routes (e.g., `["Nb1-d2-f1-g3"]`).
+   * `strategic_goals`: High-level objectives (e.g., `["Control d5 square", "Minority attack"]`).
+3. **LLM as Pure Translator:** The LLM acts strictly as a natural language synthesizer, translating the structured engine score and injected opening facts into human coaching advice.
+4. **Vector RAG Fallback:** For novel positions outside the precomputed opening tree, vector embeddings of the pawn/piece structure are used to retrieve commentary from historically similar positions.

@@ -36,3 +36,16 @@
 * **Context:** Manually coding heuristic rules to classify pawn structures and outposts is brittle and fails on slight piece variations.
 * **Decision:** Evaluated a Hybrid Vector extraction pipeline using NNUE (e.g., `jdart1/nnue` or `ChessLM`) and indexing positions into a Vector Database (FAISS/Milvus). Needs more careful analysis before final commitment.
 * **Rationale:** This mathematically isolates the "tactical DNA" of a position, allowing the system to dynamically group similar positions for "Counter-Example Training" without relying on rigid FEN matching.
+
+
+## ADR-007: Metadata Injection for LLM Commentary [PROPOSED / PENDING-REVIEW]
+* **Date:** 2026-10-10
+* **Context:** Using an LLM to generate opening explanations often causes hallucinations if the model is tasked with calculating board moves directly from FEN strings.
+* **Decision:** Decouple calculation from narration. Engine evaluations and deterministic tree metadata (`key_pawn_breaks`, `common_maneuvers`) are assembled by the backend and injected into the prompt. The LLM acts purely as a translator/commentator.
+* **Rationale:** Completely eliminates tactical hallucinations while maintaining engaging grandmaster-style commentary.
+
+## ADR-008: Cross-Rating Distribution Projection [PROPOSED / PENDING-REVIEW]
+* **Date:** 2026-10-10
+* **Context:** Data at the 2500+ Elo level is sparse (13M games) compared to 2200 Elo (160M games), making probability estimation erratic on deeper branches.
+* **Decision:** Use regression curves and probability drop-off models across 2000 and 2200 tiers to adjust and project 2500+ move likelihoods, while sourcing blunder refutations from high-eval 2200 games.
+* **Rationale:** Prevents severe sample-size starvation on deep master variations without requiring billions of expensive synthetic engine rollouts.

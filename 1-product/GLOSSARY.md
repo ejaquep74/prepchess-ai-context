@@ -25,3 +25,9 @@ To prevent AI hallucination and developer misalignment, all documentation, varia
 *   **Counter-Example Training:** A learning mode where the user is shown a typical maneuver (e.g., `Nfe5`) in a position where it fails (due to structural differences) immediately after seeing where it succeeds.
 *   **Ultra-leaf threshold:** The depth expansion stopping condition based on cumulative probability (e.g., $< 0.8\%$ chance to reach) rather than a fixed node depth.
 *   **Maneuver Route:** The tracked sequential path of a critically active piece (e.g., `f6-d4-f3`), saved for pattern training.
+
+*   **Repertoire Coverage:** The sum of cumulative move probabilities selected in a user's repertoire, indicating the mathematical proportion of opponent lines accounted for.
+*   **Opponent Memory Load:** The total number of distinct moves an opponent must memorize to achieve the same coverage against the user's repertoire.
+*   **Metadata Injection:** The architectural pattern where structured chess facts (pawn breaks, maneuvers) and engine evaluations are injected into an LLM prompt so the model acts strictly as a natural-language commentator without tactical hallucinations.
+*   **The Community Gauntlet:** A shareable challenge mode testing how many human players survive a customized repertoire past a move threshold.
+*   **Cross-Rating Calibration:** Mathematical projection adjusting blitz play and high-volume rating bands (e.g. 2200) to estimate probability distributions in sparse bands (2500+).
