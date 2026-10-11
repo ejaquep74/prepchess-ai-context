@@ -22,3 +22,8 @@ This repository defines the architecture, but it **DOES NOT** define the exact J
 - **Never write code here.** 
 - If you alter the architecture or system flows, you MUST update the relevant documents in `2-architecture/` and append an entry to `3-execution/DECISION_LOG.md`.
 - Always use the Ubiquitous Language defined in `1-product/GLOSSARY.md`.
+
+## 4. Roadmap Evolution Rule
+- **Mandatory Consultation of `ROADMAP-EVOLUTION.md`:** Before making any modifications, re-sequencing, or additions to `3-execution/ROADMAP.md`, you MUST read `3-execution/ROADMAP-EVOLUTION.md`.
+- **Proactive Commercial Warning:** You MUST proactively remind and warn the user to take into account the commercial and GTM trade-offs documented in `ROADMAP-EVOLUTION.md` (e.g., early paywalls, viral loops, coach distribution vs. heavy data science) before finalizing their proposed changes to `ROADMAP.md`.
+
