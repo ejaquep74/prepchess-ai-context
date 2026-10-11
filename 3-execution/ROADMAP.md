@@ -31,7 +31,7 @@
 * **Growth & Onboarding:**
   * Build the **Repertoire X-Ray Tool**: Allow users to input their Lichess/Chess.com username to instantly run an automated audit on their recent games.
   * Render the "Contrast Cards" (Stockfish Eval vs. PrepChess Practical Risk) to deliver instant "Aha!" value.
-  * **The Monetization Gate:** Implement Stripe/billing integration: Free X-Ray audit surfaces the top 3 "Sinking Ships" (leaks), with a one-click paywall conversion ($9–$12/mo) to unlock Taylor's custom fix and drill deck.
+  * **The Monetization Gate:** Implement Stripe/billing integration: Free X-Ray audit surfaces the top 3 "Sinking Ships" (leaks), with a one-click paywall conversion ($9–$12/mo) to unlock Gamma's custom fix and drill deck.
 
 ---
 

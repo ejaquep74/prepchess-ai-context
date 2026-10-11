@@ -8,7 +8,7 @@
 ## 1. Context & Purpose
 Players often abandon opening trainers because they memorize moves without understanding the underlying structural plans. 
 
-This specification defines the schema and data model for **AI-Generated Interactive Plan Explanations** (Taylor's Voice). The system pairs natural language strategic commentary with structured board metadata (outposts, maneuvers, open files, targets) that allow the frontend to render arrows, colored squares, and tactical highlights synchronized with the explanation.
+This specification defines the schema and data model for **AI-Generated Interactive Plan Explanations** (Gamma's Voice). The system pairs natural language strategic commentary with structured board metadata (outposts, maneuvers, open files, targets) that allow the frontend to render arrows, colored squares, and tactical highlights synchronized with the explanation. (See [VISION-MASCOT.md](file:///home/ejaque/projects/prepchess/prepchess-ai-context/1-product/VISION-MASCOT.md) for voice rules).
 
 ---
 
@@ -77,4 +77,4 @@ When an explanation is requested for a specific node in the opening tree, the ba
 ## 3. Frontend Interactive Behavior (`prepchess-ui`)
 1. **Interactive Text Highlighting:** The commentary text in the UI renders tokens like `$1` and `$3` as clickable or hoverable badges.
 2. **Synchronized Board Graphics:** Hovering over an outpost badge highlights that square on `react-chessboard`. Hovering over a maneuver badge renders the directional arrow (%cal).
-3. **Audio / Speech (Future):** Taylor’s voice can stream the `commentary` text while the frontend sequentially illuminates the referenced squares.
+3. **Audio / Speech (Future):** Gamma’s voice can stream the `commentary` text while the frontend sequentially illuminates the referenced squares.

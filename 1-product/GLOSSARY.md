@@ -16,7 +16,7 @@ To prevent AI hallucination and developer misalignment, all documentation, varia
 
 ### System Components
 *   **Hollow Frontend:** The React UI architecture. The UI performs NO repertoire math or evaluation. It only renders sanitized API data.
-*   **Taylor:** The user-facing mascot and "Psychology-Bot" that guides users.
+*   **Gamma:** The user-facing mascot and "Wry Tactical Co-Pilot" (see [VISION-MASCOT.md](file:///home/ejaque/projects/prepchess/prepchess-ai-context/1-product/VISION-MASCOT.md)). An alert, non-judgmental companion bot translating engine data into human psychological insights.
 *   **Interactive Plan Explanations:** An AI-generated coach's voice synchronized with visual board indicators (arrows, highlighted outposts) to explain the structural goals of a position, rather than just listing raw moves.
 
 *   **Rare Pawn Structure:** A pawn skeleton that breaks common conventions (e.g., an early atypical pawn break in a Hedgehog) but holds statistical significance in the user's games.

@@ -73,7 +73,7 @@ ChessGamma (internal project: PrepChess) is a next-generation SaaS platform desi
 | **ChessAtlas** | Direct Chessbook competitor using the FSRS (Free Spaced Repetition Scheduler) algorithm. | Freemium (Free up to 200 variations; Premium ~$9.99/mo, $83/yr). | Attempts to beat Chessbook on algorithm efficiency. |
 | **Noctie.ai** | AI bots mimicking human blunder rates for active sparring against user repertoires. | Premium SaaS ($14/mo or $96/yr). | Validates strong willingness to pay for contextual play/sparring over rote flashcards. |
 | **Chess Prep Pro** | Mobile-first iOS/Android builder with PGN import and mobile-optimized SRS. | Low-cost ($3.99/mo, $13/yr, or $34.99 lifetime). | Mobile-native competitor competing on price. |
-| **Learn Chess with Dr. Wolf** | Voice coach explaining tactical/positional principles during live play. | Freemium subscription. | Proves the value of a conversational coaching persona (Taylor). |
+| **Learn Chess with Dr. Wolf** | Voice coach explaining tactical/positional principles during live play. | Freemium subscription. | Proves the value of a conversational coaching persona (Gamma). |
 | **Chessiverse** | Over 1,000 AI bots programmed with specific opening choices. | Freemium. | Confirms demand for targeted sparring against specific defenses. |
 
 ### Strategic Market Takeaways

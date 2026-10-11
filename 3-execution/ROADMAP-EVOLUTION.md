@@ -17,23 +17,22 @@ The primary business risk for PrepChess / ChessGamma is over-engineering deep ba
 
 ## 2. Key Commercial Adjustment Proposals
 
-### Proposal 1: Anchor Taylor the Mascot as the Core Brand Persona (Humanize the UX)
-* **Concept:** Integrate Taylor directly into **MVP 2** onboarding and audits rather than delaying to future AI commentary.
-* **Vision Alignment & Visuals:** Taylor is the sleek, expressive "Psychology-Bot" sporting a yellow **tailor's tape sash**—visually grounding the core promise of **tailor-made repertoires** built to exploit human cognitive limits.
-* **Tone of Voice:** Blends sharp competence with dry wit, acting as the witty anti-Stockfish companion:
-  * *"Hi, I am Taylor! I am here to help you get a repertoire tailor-made just for you!"*
-  * *"I am fluent in over 500 million positions of real humans under psychological stress. I can help you find the moves that really make them nervous."*
+### Proposal 1: Anchor Gamma the Co-Pilot Mascot as the Core Brand Persona (Humanize the UX)
+* **Concept:** Integrate **Gamma** directly into **MVP 2** onboarding and audits rather than delaying to future AI commentary.
+* **Vision Alignment & Visuals:** Gamma is the sleek, expressive cyber-companion bot (inspired by *EVE* and *Astro Bot*) with dynamic LED eye reactions tied to engine telemetry. Visually grounds the core promise of openings without drama, exploiting human cognitive limits. (See [VISION-MASCOT.md](file:///home/ejaque/projects/prepchess/prepchess-ai-context/1-product/VISION-MASCOT.md)).
+* **Tone of Voice:** "The Wry Tactical Co-Pilot" — calm, confident, non-judgmental, deadpan tactical wit:
+  * *"Greetings. I am Gamma. While standard engines calculate theoretical perfection, I monitor human psychological friction across 500 million games. Let us build a repertoire that makes your opponents sweat."*
 * **Core Product Role in MVP 2:**
-  * Delivers the X-Ray audit: *"The Gamma engine calls this equal, but my sensors show humans blunder here 40% of the time!"*
+  * Delivers the X-Ray audit: *"The computer calls this equal, sir. Fortunately for us, human beings are terrified of this pin. Play it, and watch the clock burn."*
   * Grounds the Contrast Cards by translating raw volatility ($\sigma$) into human terms.
 * **Commercial Value:** Humanization transforms dry, intimidating chess homework into an engaging coaching relationship, dramatically cutting onboarding drop-off and lifting paywall conversion.
-* **International Naming Consideration (Taylor vs. Gamma):** The "Taylor / tailor-made / measuring tape" pun only works in English (it is lost in Spanish, German, French, etc., where >60% of players reside). Consider renaming the mascot simply to **Gamma** for universal, zero-friction global recognition and direct symmetry with *ChessGamma*.
+* **Global Naming Resolution:** Replaced the earlier English-only pun ("Taylor the Tailor") with **Gamma** for universal, zero-friction global recognition and brand symmetry with *ChessGamma*.
 
 ### Proposal 2: Early Paywall Gate ("Free Audit, Paid Cure")
 * **Concept:** Move monetization into **MVP 2** instead of waiting for public beta.
 * **Flow:**
-  * **Free Hook:** User inputs Lichess/Chess.com handle $\to$ Taylor delivers the **Repertoire X-Ray**, identifying their top 3 "Sinking Ships" (catastrophic leaks where they lose >70% of games).
-  * **Paid Gate ($9–$12/mo):** *"Click to let Taylor patch these 3 holes with a tailored sideline and custom spaced-repetition drill deck."*
+  * **Free Hook:** User inputs Lichess/Chess.com handle $\to$ Gamma delivers the **Repertoire X-Ray**, identifying their top 3 "Sinking Ships" (catastrophic leaks where they lose >70% of games).
+  * **Paid Gate ($9–$12/mo):** *"Click to let Gamma patch these 3 holes with a tailored sideline and custom spaced-repetition drill deck."*
 * **Commercial Value:** Monetizes at the exact moment of peak emotional pain (right after proving why they keep dropping rating points).
 
 ### Proposal 3: Pull Viral Distribution Loops into Early Beta
@@ -57,7 +56,7 @@ The primary business risk for PrepChess / ChessGamma is over-engineering deep ba
 ### Proposal 6: The "Secret Weapons" 80% Bar as Core Retention Engine
 * **Concept:** Elevate the Secret Weapons progress bar into a primary habit-forming loop in **MVP 3**.
 * **Flow:**
-  * Taylor locks new sidelines: *"Mastery at 35%. Complete 3 more spaced-repetition drills to hit 80% and unlock this weapon for online play."*
+  * Gamma locks new sidelines: *"Mastery at 35%. Complete 3 more spaced-repetition drills to hit 80% and unlock this weapon for online play."*
 * **Commercial Value:** Cures player anxiety about taking new openings into live games, generates daily dopamine, drives Daily Active Use (DAU), and stops subscription churn.
 
 ---

@@ -61,4 +61,4 @@
 * **Date:** 2026-10-10
 * **Context:** Extracting actionable positional advice from hundreds of millions of moves requires isolating recurring piece maneuvers without manual hardcoding.
 * **Decision:** Utilize sequential pattern mining (PrefixSpan / N-grams) alongside differential occupancy heatmaps to mathematically extract "winning highways."
-* **Rationale:** Provides objective, data-backed maneuver paths that can be automatically converted into visual coach recommendations by Taylor.
+* **Rationale:** Provides objective, data-backed maneuver paths that can be automatically converted into visual coach recommendations by Gamma.
