@@ -7,9 +7,11 @@ This repository is the **Single Source of Truth (SSOT)** for the architecture, p
 
 **CRITICAL:** 
 - If you are an agent working in `prepchess-ui` (Frontend), read `1-product/VISION.md`, `1-product/GLOSSARY.md`, and `2-architecture/FRONTEND_HOLLOW.md`.
-- If you are an agent working in `opening-explorer` (Backend), read `1-product/GLOSSARY.md` and `2-architecture/BACKEND_ENGINE.md`.
-- **Discovery Rule:** DO NOT read the `0-discovery/` folder during normal coding sessions. It is a braindump for unapproved ideas. Only read it if the user explicitly asks for ideation, competitor analysis, or to process `***IDEA:` tags. **Once ideas are processed, move the original files to `0-discovery/archive/` to prevent token waste and reprocessing.**
-- **Do not read files outside your domain** to preserve your context window.
+- **Discovery Rule:** DO NOT read the `0-discovery/` folder during normal coding sessions. It is a braindump for unapproved ideas. Only read it if the user explicitly asks for ideation, competitor analysis, or to process `***IDEA:` tags. 
+  - **Mandatory [PROPOSED] Tagging:** When incorporating ideas from `0-discovery/` into architecture, vision, or engine specs, always label them with `[PROPOSED]` tags (e.g., `[PROPOSED SPECIFICATION]`, `[PROPOSED ALGORITHM]`).
+  - **Context & Market Notes:** General observations and competitor insights belong in `1-product/MARKET.md` or relevant files as background context.
+  - **Contradiction & Irrelevance Gate:** If an incoming note or idea appears contradictory to the established product vision/constraints or seems irrelevant, do NOT incorporate it silently. You MUST pause and flag it for user confirmation.
+  - **Archiving:** Once ideas from a file are processed, move the original file to `0-discovery/archive/` to prevent token waste and reprocessing.
 
 ## 2. The API Schema Rule
 This repository defines the architecture, but it **DOES NOT** define the exact JSON API schema. 
