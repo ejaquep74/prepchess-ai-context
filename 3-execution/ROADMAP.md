@@ -18,6 +18,7 @@
 ---
 
 ## MVP 1.5: The Interactive Pilot (Internal Dogfooding)
+* **Specification:** [SPEC-04: MVP 1.5 Interactive Tactical Pilot](file:///home/ejaque/projects/prepchess/prepchess-ai-context/3-execution/specs/SPEC-04-MVP1.5-TACTICAL-PILOT.md)
 **Objective:** Deliver an end-to-end playable vertical slice on curated high-asymmetry example lines (e.g., Vienna Gambit, Smith-Morra, Fried Liver), proving the practical value of blunder exploitation and tactical sacrifices without external OAuth or billing dependencies.
 
 * **Move Table Telemetry & Visual Indicators:**
