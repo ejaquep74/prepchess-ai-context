@@ -27,14 +27,17 @@ Where $P(a | v) = (\text{Games with move } a) / (\text{Total games in position }
 * **Purpose:** Synthesize realistic human defense lines and their punishments to patch missing empirical data.
 
 
-## 4. MoveNode DB Schema Additions
+## 4. MoveNode DB Schema Additions [PROPOSED SPECIFICATION - PENDING IMPLEMENTATION]
+> **Status:** Proposed / Not yet implemented in `opening-explorer`. The current backend schema does not yet isolate these metrics or store ECO codes.
 * **ECO Codes:** Every `MoveNode` stores the ECO code of the opening being explored. This facilitates querying for transpositions by matching short FENs across different opening branches.
 * **Granular Metric Storage:** Instead of only storing a static compound score, the DB stores the isolated metrics (`humanEval`, `sacrificePctg`, `stdDev`). This allows the frontend sliders to recalculate the compound metric on the fly.
 
-## 5. Dynamic Exploration Depth (Ultra-Leaf)
+## 5. Dynamic Exploration Depth (Ultra-Leaf) [PROPOSED ALGORITHM - PENDING IMPLEMENTATION]
+> **Status:** Proposed / Not yet implemented. The active backend currently explores to a fixed depth limit.
 Instead of capping tree exploration at a fixed arbitrary depth (e.g., 25 moves), the engine explores forward until the *cumulative probability* of reaching the node drops below a threshold (e.g., $< 0.8\%$), or until the absolute evaluation drops below 1.0 (indicating the end of a forced advantage line).
 
-## 6. Hybrid Pattern Extraction Pipeline (Vectorization)
+## 6. Hybrid Pattern Extraction Pipeline (Vectorization) [PROPOSED ARCHITECTURE - FUTURE RESEARCH]
+> **Status:** Future Research / Post-Beta Pipeline. Not part of the active Java backend.
 To categorize tactical motifs and structural heuristics without relying entirely on manual rules:
 1. **Geometric Filtering:** The board is stripped of irrelevant pieces using `python-chess` or `ChessLib`, isolating the core tension (e.g., just the pawn structure and attacking knights).
 2. **NNUE Vectorization:** The purified FEN is passed through a neural network (e.g., `ChessLM` or `jdart1/nnue`) to extract a multidimensional vector representing the position's "tactical DNA".
