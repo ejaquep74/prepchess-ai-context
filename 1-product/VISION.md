@@ -6,6 +6,13 @@
 *   **Slogan:** "Your Openings, no drama."
 *   **Core Value Proposition:** Stop playing like a cold machine. ChessGamma generates tailor-made opening repertoires to exploit human psychology and practical advantages.
 
+## The Grandmaster Secret: Psychological Asymmetry
+Computers calculate without a heartbeat, without clock panic, and without fatigue. Humans don't.
+
+The assumption that Grandmasters simply memorize Stockfish's top choices is an amateur myth. From Emanuel Lasker and Garry Kasparov to Magnus Carlsen and Daniil Dubov, elite champions prepare by **funneling games into their favorite pawn skeletons** and steering opponents into high-friction tactical minefields where the opponent bears the cognitive burden of defense.
+
+ChessGamma bridges the gap between engine truth and practical human victory—giving club players the psychological preparation tools previously reserved for elite Grandmaster teams.
+
 ## The Mascot: Taylor the Assistant
 To provide a friendly, interactive user experience alongside the powerful ChessGamma engine, the application features a mascot named **Taylor**. 
 

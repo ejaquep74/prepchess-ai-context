@@ -27,3 +27,6 @@ This repository defines the architecture, but it **DOES NOT** define the exact J
 - **Mandatory Consultation of `ROADMAP-EVOLUTION.md`:** Before making any modifications, re-sequencing, or additions to `3-execution/ROADMAP.md`, you MUST read `3-execution/ROADMAP-EVOLUTION.md`.
 - **Proactive Commercial Warning:** You MUST proactively remind and warn the user to take into account the commercial and GTM trade-offs documented in `ROADMAP-EVOLUTION.md` (e.g., early paywalls, viral loops, coach distribution vs. heavy data science) before finalizing their proposed changes to `ROADMAP.md`.
 
+## 5. Specification & Planning Alignment Gate
+- **The Vision Check (Planning Only):** When authoring new feature specifications in `3-execution/specs/` or modifying `3-execution/ROADMAP.md`, verify that the proposed features reinforce the **Psychological Asymmetry** and **Pawn Skeleton** principles defined in `1-product/VISION.md`. Reject or flag generic chess engine features that dilute this core value proposition. *(Note: Implementation/coding agents in other repositories derive their tasks directly from specs and do not need to perform this check).*
+

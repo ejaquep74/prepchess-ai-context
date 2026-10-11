@@ -6,6 +6,11 @@
 *   **App Store Title Strategy:** "ChessGamma - Opening Trainer" or "ChessGamma: Tailored Openings"
 *   **App Store Subtitle:** "Your Openings, no drama."
 
+### The Brand Manifesto ("The GM Edge for Club Players")
+> *"Computers calculate without a heartbeat, without clock panic, and without fatigue. Humans don't.*  
+> *Top Grandmasters never play like cold machines—they prepare by funneling games into their favorite pawn structures and steering opponents into high-friction tactical minefields.*  
+> *ChessGamma gives club players the exact psychological preparation tools previously reserved for elite Grandmaster teams."*
+
 ## Executive Summary
 ChessGamma (internal project: PrepChess) is a next-generation SaaS platform designed to solve the critical flaw in modern chess preparation: the disconnect between strict engine evaluations (0.00) and practical human playability. By leveraging a massive database of positions enriched with multi-depth engine heuristics, the platform identifies "minefields"—positions where human opponents are statistically proven to blunder—and curates personalized repertoires that maximize practical winning chances over theoretical perfection.
 
