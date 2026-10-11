@@ -53,29 +53,59 @@
 
 ---
 
-## MVP 4: Advanced AI Extraction & Pattern Training (Post-Beta)
-**Objective:** Replace hardcoded engine rules with vectorized AI pattern recognition and deliver the ultimate "Counter-Example" training loop to users.
+## MVP 4: Pawn Skeleton Clustering & Repertoire Harmonization [PROPOSED SPECIFICATION]
+**Objective:** Slash memorization overhead by systematically funneling the player's White and Black repertoires into shared universal pawn structures (e.g., IQP, Carlsbad, Hedgehog).
 
-* **Vector Database Integration:**
-  * Implement the Hybrid Vector pipeline (Geometric Filter -> NNUE Vector -> FAISS/Milvus).
-  * Automatically group similar pawn structures and maneuver routes (e.g., `f6-d4-f3`).
-* **Batch AI Generation:**
-  * Use batch LLM processing (e.g., Gemini Pro) to parse all ECO codes with >2000 master games.
-  * Generate a structured JSON database of standard maneuvers, key squares, and typical pawn breaks for every major structure.
-* **The "Trap Lab" Expansion:**
-  * Build the "Counter-Example" training UI: Show a user where a move works, then immediately show a mathematically similar vector-position where the same move is a blunder.
-  * Build the "Secret Weapons" tracker UI, unlocking new variations for live play once the user reaches 80% mastery in spaced repetition.
+* **Pawn Skeleton Classifier:**
+  * Categorize all tree branches beyond move 10 by their underlying pawn skeleton.
+* **Tree Optimizer:**
+  * Algorithmic weighting steering candidate lines across both colors to funnel games into the user's preferred structures, cutting required study concepts by 50%.
+* **Unified Middlegame Transition:**
+  * Generate shared strategic guidelines showing how identical middlegame plans apply across ostensibly different opening branches.
 
-*   **Coach & Community Engagement:**
-    *   Deploy the B2B Coach Ambassador Program (free access for coaches and up to 20 students).
-    *   Launch viral community mechanics: The "Giant Killer" leaderboard and the shareable "Community Gauntlet" interactive links.
-*   **AI Commentary Pipeline:**
-    *   Implement the Metadata Injection orchestrator (linking Stockfish flags with opening tree metadata into prompt templates).
+---
 
-*   **Player Identity & Repertoire DNA:**
-    *   Implement Repertoire DNA spider charts and Grandmaster Doppelgänger alignment.
-    *   Deploy custom naming rights for rare user sub-variations (<50 master games).
-*   **Contextual Sparring & Middlegame Bridge:**
-    *   Launch **Tabiya Takeover** sparring mode, dropping users into Move 20 positions against ELO-calibrated AI bots.
-    *   Generate automated **Middlegame Mission Cards** (3-bullet checklists) at the conclusion of opening branches.
-    *   Deploy the **EV Leak Detector** to audit live games for mid-transition drop-offs.
+## MVP 5: Opponent Memory Load & Coverage Engine [PROPOSED SPECIFICATION]
+**Objective:** Quantify repertoire completeness and practical match difficulty, providing tangible proof of value to the user.
+
+* **Repertoire Coverage Calculator:**
+  * Sum cumulative move probabilities across selected lines to show what percentage of real-world opponent play is accounted for.
+* **Opponent Memory Load Engine:**
+  * Invert coverage calculations against the opponent to measure the exact number of distinct moves an opponent must memorize to achieve matching coverage.
+* **Explorer Dashboard Integration:**
+  * Expose real-time Coverage % and Opponent Memory Load badges directly in the `prepchess-ui` tree explorer.
+
+---
+
+## MVP 6: Cross-Rating Elo Calibration Pipeline [PROPOSED ALGORITHMIC PIPELINE]
+**Objective:** Eliminate sample-size starvation on deep master variations and mathematically calibrate Blitz data to simulate Rapid play.
+
+* **Time-Control Regression Model:**
+  * Statistically adjust high-volume Blitz move probabilities using regression models to mimic Rapid/Classical human decision distributions.
+* **Cross-Tier Projection Model:**
+  * Use the rich 2200 Elo dataset (160M games) to project reliable probability drop-off curves for sparse 2500+ master nodes (13M games).
+* **Blunder Refutation Filter:**
+  * Source blunder refutations safely from high-eval 2200 games to patch missing defensive lines in deep master variations without requiring billions of expensive synthetic engine rollouts.
+
+---
+
+## Proposed MVP Concepts [UNDER EVALUATION]
+
+### MVP Proposal: Advanced AI Extraction & Pattern Training (Post-Beta)
+* **Objective:** Replace hardcoded engine rules with vectorized AI pattern recognition and deliver the ultimate "Counter-Example" training loop to users.
+* **Key Components:**
+  * **Vector Database Integration:** Implement the Hybrid Vector pipeline (Geometric Filter -> NNUE Vector -> FAISS/Milvus) to group positions by tactical DNA.
+  * **Batch AI Generation:** Use batch LLM processing (e.g., Gemini Pro) across ECO codes with >2000 master games to compile structured theory facts (breaks, maneuvers, outposts).
+  * **The Trap Lab Expansion:** Build Counter-Example drills (poisoned square exceptions) and Secret Weapons tracker (80% mastery progress bar).
+  * **Contextual Sparring:** Tabiya Takeover (sparring from move 20 against AI bots), Middlegame Mission Cards, and EV Leak Detector.
+  * **Identity & Growth:** Repertoire DNA spider charts, B2B Coach Ambassador program, and viral Community Gauntlet links.
+
+### MVP Proposal: Clock Burn Index & In-Game Time Simulator [DEFERRED / DOUBTFUL ROI]
+* **Objective:** Parse Lichess PGN move timestamps to display estimated clock times and give an Expected Value (EV) boost to lines that empirically force opponents into time trouble.
+* **Feasibility & ROI Assessment:** Considered **too complicated to implement** at this stage. Storing granular per-move clock timestamps across hundreds of millions of moves in the database creates massive storage bloat and overhead, while the practical return on investment (ROI) is doubtful compared to core evaluation and repertoire features.
+
+### MVP Proposal: Study Heatmap Overlay [PROPOSED UX]
+* **Objective:** Render a visual heatmap overlay across the move tree and board to highlight heavily drilled lines versus unpracticed blind spots, streamlining daily training decisions.
+
+### MVP Proposal: Sequential Pattern Mining for "Winning Highways" [PROPOSED ALGORITHM]
+* **Objective:** Apply sequential pattern mining (PrefixSpan / N-grams) across the 500M-move dataset to isolate recurring piece maneuver sequences (e.g., `Nb1-d2-f1-g3`) that mathematically correlate with winning outcomes, automatically feeding coach arrows.
