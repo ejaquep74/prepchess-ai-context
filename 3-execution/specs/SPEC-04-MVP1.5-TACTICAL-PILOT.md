@@ -69,11 +69,18 @@ Clicking either action chip opens the **Tactical View** (integrated side panel o
   - The board locks into interactive puzzle mode.
 - **The Prompt:**
   - *"Guess Black's most common blunder here"* OR *"Find White's tactical punishment"*.
+  - **Pedagogical Blind Mode:** In Training Mode, the prompt simply asks the user to make a sound move under live pressure, without revealing whether the impending mistake belongs to them or the opponent (unless specifically filtered).
+- **Interactive Configuration Controls:**
+  - **Side Filter:** `'OPPONENT'` (Opponent errors only, default) | `'PLAYER'` (My errors only) | `'ALL'` (Both sides).
+  - **Inflection Point Distance:** Configurable 1, 2, or 3 player moves before the error occurs (default: 2 player moves / 4 plies).
+  - **Error Severity Filter:** Checkboxes for Inaccuracy (`?!`), Mistake (`?`), and Blunder (`??`).
 - **Move Validation:**
   - User plays a move directly on the `chessground` board.
   - Validated using `chessops` against the target line's critical move.
+  - **Dynamic Evaluation Tolerance:** Any move with evaluation distance $\le 0.5$ from the reference move is accepted as an alternative good move.
 - **Feedback Loop (Gamma Bot):**
   - **Success:** *"Exact refutation. This wins material in 74% of games."*
+  - **Alternative Good Move:** *"Good move! That keeps the advantage, but let's see how the main line punishes this mistake even harder."*
   - **Mistake:** *"Logical, but gives Black time to castle. Try finding the queen invasion."* (Option to retry or show solution).
 
 ---
@@ -91,6 +98,8 @@ The backend already has foundational infrastructure in `ExampleLinesController.j
 **Query Parameters:**
 - `fen: <string>` (Target position FEN)
 - `category: <string>` (`BASIC_ERRORS` | `SACRIFICES` | `TRAPS`)
+- `side: <string>` (`OPPONENT` | `PLAYER` | `ALL`, default: `OPPONENT`)
+- `errorLevels: <string>` (Comma-separated e.g. `BLUNDER,MISTAKE,INACCURACY`, default: `BLUNDER,MISTAKE`)
 - `percentile: <int>` (Default: `100`)
 - `page: <int>` (Default: `0`)
 - `size: <int>` (Default: `10`)
