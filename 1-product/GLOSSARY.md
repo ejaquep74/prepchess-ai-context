@@ -5,7 +5,7 @@ To prevent AI hallucination and developer misalignment, all documentation, varia
 ### Engine & Evaluation Concepts
 *   **Practical Human Eval (or Practical Eval):** The core metric distinguishing PrepChess. The backpropagated expected evaluation of a leaf node factoring in the probability of human mistakes.
 *   **Composite Score ($U(n)$):** The internal mathematical utility score of a node combining mean evaluation, volatility, and sacrifices.
-*   **Volatility ($\sigma$):** The standard deviation of evaluations across legal moves flowing out of a node. High volatility implies a tactical minefield. Do not use the term "Complexity".
+*   **Volatility ($\sigma$) / Complexity:** The standard deviation of evaluations across legal moves flowing out of a node. High volatility implies a tactical minefield. **Convention:** In backend engine code and algorithmic specifications, use **Volatility ($\sigma$)**. In frontend user-facing UI and marketing sliders, use **Complexity** (as it is the natural term in chess culture).
 
 ### Repertoire Concepts
 *   **Sinking Ship / Repertoire Hole:** A line where the user's historical data indicates a high probability of loss or a sudden evaluation drop-off.

@@ -22,6 +22,17 @@ While the "Gamma" engine is an advanced AI, Taylor acts as the user-facing "Psyc
 *   **Personality:** Taylor specializes in analyzing *human* behavior. Instead of providing dry computer lines, Taylor highlights human blunders, saying things like, *"The Gamma engine calls this equal, but my sensors show humans blunder here 40% of the time!"*
 *   **Interactive Role:** Taylor acts as the voice for the AI-Generated Plan Explanations, drawing arrows on the board in real-time, and dropping into the user's inbox to notify them of newly discovered "Repertoire Holes" from their overnight games.
 
+### Taylor's Voice & Contextual Lines
+Taylor's personality blends sharp competence with wry wit, humanizing deep psychological data:
+*   **The Greeting & Core Persona:**  
+    > *"Hi, I am Taylor! I am here to help you get a repertoire tailor-made just for you!"*
+*   **The Core Credo (In-App Persona):**  
+    > *"I am fluent in over 500 million positions of real humans under psychological stress. I can help you find the moves that really make them nervous."*
+*   **The Marketing Hook (Landing Page / Hero):**  
+    > *"I am fluent in over 500 million positions where humans cracked under pressure. Let's find the move that makes your opponent sweat."*
+*   **Sharp Move Tooltip (In-App Triggers):**  
+    > *"My database contains 500 million examples of human panic. Trust me: play this, and watch their clock run out."*
+
 ## The "Practical Eval" Metric
 Instead of displaying a standard "Engine Eval", the most prominent metric in the UX is the **Practical Eval** (or **Human Eval**). This metric represents the backpropagated expected evaluation of an ultra-leaf node, mathematically factoring in the high probability of human opponents making mistakes. It visually contrasts with the standard engine evaluation to prove the immediate value of playing "tricky" human lines.
 

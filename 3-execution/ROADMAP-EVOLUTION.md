@@ -17,32 +17,43 @@ The primary business risk for PrepChess / ChessGamma is over-engineering deep ba
 
 ## 2. Key Commercial Adjustment Proposals
 
-### Proposal 1: Early Paywall Gate ("Free Audit, Paid Cure")
+### Proposal 1: Anchor Taylor the Mascot as the Core Brand Persona (Humanize the UX)
+* **Concept:** Integrate Taylor directly into **MVP 2** onboarding and audits rather than delaying to future AI commentary.
+* **Vision Alignment & Visuals:** Taylor is the sleek, expressive "Psychology-Bot" sporting a yellow **tailor's tape sash**—visually grounding the core promise of **tailor-made repertoires** built to exploit human cognitive limits.
+* **Tone of Voice:** Blends sharp competence with dry wit, acting as the witty anti-Stockfish companion:
+  * *"Hi, I am Taylor! I am here to help you get a repertoire tailor-made just for you!"*
+  * *"I am fluent in over 500 million positions of real humans under psychological stress. I can help you find the moves that really make them nervous."*
+* **Core Product Role in MVP 2:**
+  * Delivers the X-Ray audit: *"The Gamma engine calls this equal, but my sensors show humans blunder here 40% of the time!"*
+  * Grounds the Contrast Cards by translating raw volatility ($\sigma$) into human terms.
+* **Commercial Value:** Humanization transforms dry, intimidating chess homework into an engaging coaching relationship, dramatically cutting onboarding drop-off and lifting paywall conversion.
+
+### Proposal 2: Early Paywall Gate ("Free Audit, Paid Cure")
 * **Concept:** Move monetization into **MVP 2** instead of waiting for public beta.
 * **Flow:**
   * **Free Hook:** User inputs Lichess/Chess.com handle $\to$ Taylor delivers the **Repertoire X-Ray**, identifying their top 3 "Sinking Ships" (catastrophic leaks where they lose >70% of games).
   * **Paid Gate ($9–$12/mo):** *"Click to let Taylor patch these 3 holes with a tailored sideline and custom spaced-repetition drill deck."*
 * **Commercial Value:** Monetizes at the exact moment of peak emotional pain (right after proving why they keep dropping rating points).
 
-### Proposal 2: Pull Viral Distribution Loops into Early Beta
+### Proposal 3: Pull Viral Distribution Loops into Early Beta
 * **Concept:** Move the **Community Gauntlet** and **The Giant Killer Board** into **MVP 2 / early MVP 3**.
 * **Flow:**
   * **The "Gauntlet" Challenge Link:** When a user crafts a tricky custom sideline, generate an instant link: *"I bet nobody in our Discord can survive 15 moves against my custom setup."*
   * **The "Giant Killer" Board:** Verified leaderboard showcasing the largest Elo upsets won using a PrepChess custom sideline.
 * **Commercial Value:** Zero-cost customer acquisition (CAC = $0) driven organically across Reddit (r/chess), Discord, and Twitter.
 
-### Proposal 3: The "B2B Coach Trojan Horse" as Launch Channel
+### Proposal 4: The "B2B Coach Trojan Horse" as Launch Channel
 * **Concept:** Launch the B2B Coach Ambassador Program during **Private Beta (MVP 2.5 / MVP 3)** rather than post-beta.
 * **Flow:**
   * Offer 20 verified coaches free lifetime access if they onboard 10–20 active students.
   * Coaches assign PrepChess drill decks as mandatory homework.
 * **Commercial Value:** Acquiring individual chess players one-by-one is slow and expensive. One coach delivers 20 captive, daily active paying/retained users on day one.
 
-### Proposal 4: Postpone Heavy Data-Science R&D Downstream
+### Proposal 5: Postpone Heavy Data-Science R&D Downstream
 * **Concept:** Defer complex statistical regression (e.g., cross-rating Blitz-to-Rapid models, 2200-to-2500 probability projection) to **MVP 5+**.
 * **Rationale:** 95% of paying customers are 1200–1900 Elo club players who will not perceive subtle statistical smoothing on move 18. Rely on simple database frequency filters until paying subscribers fund advanced data-science pipelines.
 
-### Proposal 5: The "Secret Weapons" 80% Bar as Core Retention Engine
+### Proposal 6: The "Secret Weapons" 80% Bar as Core Retention Engine
 * **Concept:** Elevate the Secret Weapons progress bar into a primary habit-forming loop in **MVP 3**.
 * **Flow:**
   * Taylor locks new sidelines: *"Mastery at 35%. Complete 3 more spaced-repetition drills to hit 80% and unlock this weapon for online play."*

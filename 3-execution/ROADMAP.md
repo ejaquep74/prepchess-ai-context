@@ -26,11 +26,12 @@
   * Secure the API layer (JWT authentication, rate limiting, and sanitized payload DTOs).
 * **Frontend (React + Vite):**
   * Build the interactive chessboard UI using `chessops` and `chessground`.
-  * Wire up the debounced Style Sliders (Complexity, Human Eval, Sacrifices).
+  * Wire up the debounced user-facing Style Sliders (Complexity, Human Eval, Sacrifices), backed by server-side volatility ($\sigma$) calculations returning sanitized UI badges per the Hollow Frontend constraint.
   * Highlight sacrifice indicators (🚨 / ⚡) dynamically in the move tree.
 * **Growth & Onboarding:**
   * Build the **Repertoire X-Ray Tool**: Allow users to input their Lichess/Chess.com username to instantly run an automated audit on their recent games.
-  * Render the "Contrast Cards" (Stockfish Eval vs. PrepChess Practical Risk) to deliver instant value without a paywall.
+  * Render the "Contrast Cards" (Stockfish Eval vs. PrepChess Practical Risk) to deliver instant "Aha!" value.
+  * **The Monetization Gate:** Implement Stripe/billing integration: Free X-Ray audit surfaces the top 3 "Sinking Ships" (leaks), with a one-click paywall conversion ($9–$12/mo) to unlock Taylor's custom fix and drill deck.
 
 ---
 
