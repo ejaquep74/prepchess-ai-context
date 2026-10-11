@@ -61,3 +61,34 @@ To drive authentic viral sharing, gamification and leaderboards must reward the 
 *   **Guess the Opponent's Move/Blunder:** Interactive review mode where users anticipate the opponent's most probable mistake (and test if they can refute it).
 *   **Transposition Path Inspector:** Identifies and groups disparate move orders converging on the identical `shortFEN`, highlighting where different paths lead to the same blunder or structural bottleneck.
 *   **Concentric Circles Sunburst View [ALTERNATIVE IDEA]:** An alternative visual representation displaying the repertoire as concentric circles (sunburst style), overlaying red dots for tactical mistakes and blue dots for sacrifice opportunities to highlight move density.
+
+
+## Deep Player Identity: "Repertoire DNA" [PROPOSED FEATURE]
+To create emotional ownership over their repertoire, users see an interactive reflection of their chess personality:
+* **Style Spider Charts:** Visual axes mapping *Chaos Tolerance* (unbalanced material/sacrifices), *Structural Purity* (closed maneuvering vs. shattered pawns), *Initiative Bias* (willingness to sacrifice objective eval for attack), and *Endgame Affinity* (tendency to force early queen trades).
+* **The "Hero Alignment" (GM Doppelgänger):** Identifies Grandmaster alignment based on generated lines (e.g., *"Your White repertoire is 74% Mikhail Tal and 26% Daniil Dubov"*), biasing example games toward those historical models.
+* **Custom Naming Rights:** When adopting a rare sub-variation played fewer than 50 times in master archives, users can name the line inside their app (e.g., *"The Chicago Attack"*), branding all drills and stats.
+
+## Semantic Example Lines & "My Brilliancies" [PROPOSED FEATURE]
+Moves are contextualized with hyper-specific semantic tags (`is-sacrifice`, `is-error`, `pawn-break`, `is-iqp`, `king-attack`):
+* **Tri-Level Example Tabs:** When exploring an opening idea, users can view three tabs:
+  1. *Master Games:* Classical model executions (e.g., Kasparov).
+  2. *Community Games:* How club players (1800 Elo) navigate the line.
+  3. *My Games:* Scans linked Lichess/Chess.com history to surface the user's past successful executions of this idea.
+* **Side-by-Side Repertoire Comparison:** Contrast example games between two competing repertoire options (e.g., French Defense vs. Caro-Kann IQP) before committing to drilling them.
+
+## Bridging the Middlegame Gap [PROPOSED FEATURE]
+Overcoming the "Opening-to-Middlegame Cliff":
+* **Tabiya Takeover (Targeted Sparring Mode):** Skip the first 10-15 moves and drop instantly into the Move 20 Tabiya against an Elo-calibrated bot to practice converting the resulting positional blueprint.
+* **Middlegame Mission Cards:** At the end of each generated opening line, Taylor presents a 3-bullet tactical checklist (e.g., *1. Primary Pawn Break: Prepare ...c5 before move 25; 2. Key Relocation: Route Nf6 via d7 to c5 outpost; 3. Counterplay Alert: Watch for White's b4-b5 push*).
+* **Pawn Skeleton Clustering:** Systematically steer both White and Black repertoire responses into shared universal pawn structures (e.g., funneling multiple lines into Isolated Queen's Pawn structures) to drastically compress the total concepts a user must master.
+
+## Anti-Pattern Training & Counter-Examples [PROPOSED FEATURE]
+Cures dogmatic autopilot play by testing tactical preconditions:
+* **"The Poisoned Square" Drills:** Puzzles where the textbook positional move (e.g., planting a knight on a power square) is a catastrophic tactical blunder due to a missing defensive precondition.
+* **"Spot the Difference" Mode:** Side-by-side comparison of Position A (where the power maneuver wins) versus Position B (where a tiny structural difference causes the same maneuver to lose).
+* **The "Only-Move" Practical Burden:** Equal (0.00) positions evaluated by cognitive asymmetry: flagging positions where the opponent has only 1 survivable move while the user has 5 comfortable choices.
+
+## Real-World Efficacy Tracking [PROPOSED FEATURE]
+* **EV Leak Detector:** Continuously tracks the delta between the user's *Expected Move 20 Eval* and their *Actual Move 20 Eval* in live games, pinpointing the exact transition move where advantage was surrendered and auto-scheduling targeted drills.
+* **Style Clash Scouting:** Pre-game opponent scouting comparing Repertoire DNA (e.g., Aggressive IQP vs. Solid Carlsbad) and surfacing model breaks against that specific profile.

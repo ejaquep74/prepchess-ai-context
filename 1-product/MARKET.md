@@ -60,3 +60,19 @@ ChessGamma (internal project: PrepChess) is a next-generation SaaS platform desi
 *   **Target Pricing:** Freemium conversion targeting $10 - $12 USD/month subscription (directly challenging Chessable's pricing tier).
 *   **B2B Coach Ambassador Program:** Direct outreach to chess coaches on Lichess/Chess.com offering free premium access for coaches plus up to 20 students to drive organic adoption.
 *   **Precalculated Foundation Trees:** Precomputing ~100 core master openings (covering 90% of typical amateur responses) ensures zero-latency client loads, while reserving cloud infrastructure for on-demand deep subvariant calculations.
+
+
+## Extended Competitor Registry (Specialized Opening Builders)
+| Competitor | Core Mechanics | Pricing Model | Key Takeaway / Competitive Dynamic |
+|---|---|---|---|
+| **ChessAtlas** | Direct Chessbook competitor using the FSRS (Free Spaced Repetition Scheduler) algorithm. | Freemium (Free up to 200 variations; Premium ~$9.99/mo, $83/yr). | Attempts to beat Chessbook on algorithm efficiency. |
+| **Noctie.ai** | AI bots mimicking human blunder rates for active sparring against user repertoires. | Premium SaaS ($14/mo or $96/yr). | Validates strong willingness to pay for contextual play/sparring over rote flashcards. |
+| **Chess Prep Pro** | Mobile-first iOS/Android builder with PGN import and mobile-optimized SRS. | Low-cost ($3.99/mo, $13/yr, or $34.99 lifetime). | Mobile-native competitor competing on price. |
+| **Learn Chess with Dr. Wolf** | Voice coach explaining tactical/positional principles during live play. | Freemium subscription. | Proves the value of a conversational coaching persona (Taylor). |
+| **Chessiverse** | Over 1,000 AI bots programmed with specific opening choices. | Freemium. | Confirms demand for targeted sparring against specific defenses. |
+
+### Strategic Market Takeaways
+1. **The "Play vs. Flashcards" Divide:** Pure flashcard apps face churn. Combining spaced repetition with targeted sparring (Tabiya Takeover against AI bots) commands higher subscription retention.
+2. **UI/UX as the Ultimate Moat:** Complex legacy tools like Chesstempo struggle with modern consumer conversion. A clean, gamified, Duolingo-style interface wins users immediately.
+3. **API Game Syncing is Mandatory:** Automatic OAuth synchronization with Lichess and Chess.com to detect out-of-book deviations is a non-negotiable expectation for modern users.
+4. **Pricing Sweet Spot:** $7 - $10/month or $80 - $100/year, with optional early-adopter lifetime unlocks.

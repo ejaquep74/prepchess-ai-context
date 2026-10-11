@@ -49,3 +49,16 @@
 * **Context:** Data at the 2500+ Elo level is sparse (13M games) compared to 2200 Elo (160M games), making probability estimation erratic on deeper branches.
 * **Decision:** Use regression curves and probability drop-off models across 2000 and 2200 tiers to adjust and project 2500+ move likelihoods, while sourcing blunder refutations from high-eval 2200 games.
 * **Rationale:** Prevents severe sample-size starvation on deep master variations without requiring billions of expensive synthetic engine rollouts.
+
+
+## ADR-009: Move 20 Hybrid EV & Clock Burn Weighting [PROPOSED / PENDING-REVIEW]
+* **Date:** 2026-10-10
+* **Context:** Pure centipawn evaluations at early plies (e.g., move 10-12) often fail to capture practical winning conversion or human cognitive friction.
+* **Decision:** Anchor opening utility to the sustained evaluation at move 20 (The 25-Move Cap) and inject a Clock Burn Index multiplier for lines that force human opponents into severe time expenditure.
+* **Rationale:** Aligns the algorithm with practical match victory rather than theoretical engine perfection.
+
+## ADR-010: Sequential Pattern Mining for Winning Highways [PROPOSED / PENDING-REVIEW]
+* **Date:** 2026-10-10
+* **Context:** Extracting actionable positional advice from hundreds of millions of moves requires isolating recurring piece maneuvers without manual hardcoding.
+* **Decision:** Utilize sequential pattern mining (PrefixSpan / N-grams) alongside differential occupancy heatmaps to mathematically extract "winning highways."
+* **Rationale:** Provides objective, data-backed maneuver paths that can be automatically converted into visual coach recommendations by Taylor.

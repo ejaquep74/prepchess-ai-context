@@ -71,3 +71,11 @@
     *   Launch viral community mechanics: The "Giant Killer" leaderboard and the shareable "Community Gauntlet" interactive links.
 *   **AI Commentary Pipeline:**
     *   Implement the Metadata Injection orchestrator (linking Stockfish flags with opening tree metadata into prompt templates).
+
+*   **Player Identity & Repertoire DNA:**
+    *   Implement Repertoire DNA spider charts and Grandmaster Doppelgänger alignment.
+    *   Deploy custom naming rights for rare user sub-variations (<50 master games).
+*   **Contextual Sparring & Middlegame Bridge:**
+    *   Launch **Tabiya Takeover** sparring mode, dropping users into Move 20 positions against ELO-calibrated AI bots.
+    *   Generate automated **Middlegame Mission Cards** (3-bullet checklists) at the conclusion of opening branches.
+    *   Deploy the **EV Leak Detector** to audit live games for mid-transition drop-offs.

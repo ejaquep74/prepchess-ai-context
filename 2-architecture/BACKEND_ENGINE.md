@@ -52,3 +52,21 @@ To categorize tactical motifs and structural heuristics without relying entirely
 ## 9. Hybrid Maia Bounded Search [PROPOSED ENHANCEMENT]
 *   **50-Node Bounded Rationality Search:** Construct a small 50-node candidate tree evaluated by Maia and tuned against empirical human blunder rates.
 *   **Positional Heuristic Stabilization:** Evaluate average positional/material heuristics across 3–4 plies. When heuristic values stabilize, Maia selects lines that mimic human positional logic while avoiding catastrophic tactical blunders in rare branches where empirical game data is missing.
+
+
+## 10. Move 20 Hybrid EV & Clock Burn Weighting [PROPOSED SPECIFICATION]
+To evaluate practical human middlegame yield beyond raw move-12 engine scores:
+* **The 25-Move Cap:** Restricts primary algorithmic exploration to moves 1–25, avoiding late-middlegame/endgame bloat and focusing where 80% of non-master games are decided.
+* **Middlegame Yield (Moves 18–25):** Evaluates whether an opening sustains its positional advantage into the early middlegame.
+* **Clock Burn Index:** Analyzes empirical online time-spent distributions per ply. Variations that mathematically force opponents to consume disproportionate clock time navigating complex defensive trees receive an Expected Value (EV) multiplier.
+
+## 11. Differential Heatmapping & Sequential Pattern Mining [PROPOSED ALGORITHMIC PIPELINE]
+To identify structural winning highways and key squares from the heuristic database:
+* **Differential Occupancy Heatmapping:** Contrasts piece occupancy across winning game states ($\ge +1.5$) versus losing states ($\le -1.5$) to isolate statistically critical squares.
+* **Winning Highways (PrefixSpan / N-grams):** Employs sequential pattern mining across move trees to isolate recurring piece maneuvers that exclusively correlate with advantage generation.
+* **Actionable Rule Cards (Feature Importance):** Trains ML classifiers (XGBoost / Random Forest) on position heuristics to identify the primary failure point (e.g., lost king safety, passive rook) causing evaluation collapse.
+
+## 12. Counter-Example & Anti-Pattern Isolation [PROPOSED ALGORITHM]
+To isolate tactical exceptions for training:
+* **Heuristic Contradiction Query:** Detects positions where structural heuristic scores (e.g., Outpost Score) are high but engine evaluation drops sharply ($0.00 \to -4.0$).
+* **Popular Blunder Filter:** Identifies positions where an intuitive power maneuver is the most frequent human candidate move but fails to a concrete tactical refutation.

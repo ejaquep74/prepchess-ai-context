@@ -31,3 +31,14 @@ To prevent AI hallucination and developer misalignment, all documentation, varia
 *   **Metadata Injection:** The architectural pattern where structured chess facts (pawn breaks, maneuvers) and engine evaluations are injected into an LLM prompt so the model acts strictly as a natural-language commentator without tactical hallucinations.
 *   **The Community Gauntlet:** A shareable challenge mode testing how many human players survive a customized repertoire past a move threshold.
 *   **Cross-Rating Calibration:** Mathematical projection adjusting blitz play and high-volume rating bands (e.g. 2200) to estimate probability distributions in sparse bands (2500+).
+
+*   **Repertoire DNA:** A player's visual style profile across key operational axes: Chaos Tolerance, Structural Purity, Initiative Bias, and Endgame Affinity.
+*   **Move 20 Hybrid EV:** An opening utility metric factoring sustained middlegame engine yield (moves 18–25), Maia human volatility, and the Clock Burn Index.
+*   **Clock Burn Index:** A metric boosting candidate variations based on empirical data proving they force human opponents into deep time expenditure.
+*   **Tabiya Takeover:** A targeted sparring mode where the user skips initial moves and plays directly from the Move 20 position against an Elo-calibrated AI bot.
+*   **Middlegame Mission Card:** A 3-bullet checklist generated at the end of an opening line detailing immediate strategic objectives (pawn break, piece relocation, opponent counterplay).
+*   **Pawn Skeleton Clustering:** An algorithmic optimization steering a player's White and Black repertoires toward shared pawn structures to minimize memorization load.
+*   **Differential Heatmapping:** A mathematical comparison of piece occupancy between winning (+1.5) and losing (-1.5) states to isolate true key squares.
+*   **The Poisoned Square Drill:** A counter-example puzzle where an intuitively attractive positional move loses to a concrete tactical refutation.
+*   **Spot the Difference Mode:** A training format contrasting two nearly identical positions where a subtle structural shift determines whether a power move succeeds or fails.
+*   **EV Leak Detector:** An automated audit comparing a user's theoretical Move 20 EV against their actual live game Move 20 evaluation.
