@@ -27,6 +27,7 @@ The primary business risk for PrepChess / ChessGamma is over-engineering deep ba
   * Delivers the X-Ray audit: *"The Gamma engine calls this equal, but my sensors show humans blunder here 40% of the time!"*
   * Grounds the Contrast Cards by translating raw volatility ($\sigma$) into human terms.
 * **Commercial Value:** Humanization transforms dry, intimidating chess homework into an engaging coaching relationship, dramatically cutting onboarding drop-off and lifting paywall conversion.
+* **International Naming Consideration (Taylor vs. Gamma):** The "Taylor / tailor-made / measuring tape" pun only works in English (it is lost in Spanish, German, French, etc., where >60% of players reside). Consider renaming the mascot simply to **Gamma** for universal, zero-friction global recognition and direct symmetry with *ChessGamma*.
 
 ### Proposal 2: Early Paywall Gate ("Free Audit, Paid Cure")
 * **Concept:** Move monetization into **MVP 2** instead of waiting for public beta.
