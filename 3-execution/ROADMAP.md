@@ -46,8 +46,17 @@
   * Secure the API layer (JWT authentication, rate limiting, and sanitized payload DTOs).
 * **Frontend (React + Vite):**
   * Build the interactive chessboard UI using `chessops` and `chessground`.
-  * Wire up the debounced user-facing Style Sliders (Complexity, Human Eval, Sacrifices), backed by server-side volatility ($\sigma$) calculations returning sanitized UI badges per the Hollow Frontend constraint.
-  * Highlight sacrifice indicators (🚨 / ⚡) dynamically in the move tree.
+  * Highlight sacrifice indicators (🚨 / ⚡) and blunder indicators (⚠️ / 💥) dynamically in the move tree.
+* **The Repertoire Generation & "Fitting" View:**
+  * **The "Universe" vs. "Repertoire" Paradigm:**
+    * *The Universe (Baseline Reference):* The wide exploration tree containing all plausible player candidate moves, establishing baseline benchmark metrics (total lines, baseline practical eval, sacrifice %, error rates, and natural pawn structure distribution).
+    * *The Tailored Repertoire (1 Move per Player Turn):* Single-move pruning on the player's turn driven by the multi-objective utility function $U(n)$, while preserving all realistic opponent branches.
+  * **Interactive Multi-Objective Sliders:**
+    * User adjusts weights for **$\gamma$-Score (Practical Human Eval)**, **CPU Eval (Engine Soundness)**, **Complexity ($\sigma$)**, and **Sacrifice Bias ($PSAC$)**.
+    * Re-generating the repertoire recalculates node scores and prunes candidate lines on demand.
+  * **Live Comparative Metrics Dashboard:**
+    * Displays dynamic deltas comparing the active tailored repertoire against the baseline "Universe" (e.g., changes in average practical eval, tactical sacrifice frequency, and volatility).
+    * **Pawn Structure Distribution Panel:** Tracks and visualizes the percentage breakdown of underlying pawn skeletons (e.g., % Carlsbad, % IQP, % Hedgehog) in the generated repertoire contrasted directly against the broader opening universe.
 * **Growth & Onboarding:**
   * Build the **Repertoire X-Ray Tool**: Allow users to input their Lichess/Chess.com username to instantly run an automated audit on their recent games.
   * Render the "Contrast Cards" (Stockfish Eval vs. PrepChess Practical Risk) to deliver instant "Aha!" value.

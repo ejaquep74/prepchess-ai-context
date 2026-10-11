@@ -59,6 +59,17 @@ The primary business risk for PrepChess / ChessGamma is over-engineering deep ba
   * Gamma locks new sidelines: *"Mastery at 35%. Complete 3 more spaced-repetition drills to hit 80% and unlock this weapon for online play."*
 * **Commercial Value:** Cures player anxiety about taking new openings into live games, generates daily dopamine, drives Daily Active Use (DAU), and stops subscription churn.
 
+### Proposal 7: Endgame Filtering & Standalone Move 26+ Sampling (Avoid Full-Tree Bloat)
+* **The Costly Trap:** Expanding the primary Expectiminimax tree from Move 25 to Move 50/60 triggers catastrophic $10\times$–$50\times$ database storage bloat and severe sample-size decay.
+* **The Standalone Move 26+ Scanning Architecture:**
+  * **Zero Database Risk (Moves 1–25 Untouched):** Since the primary opening database (Moves 1–25) is already imported and stable, it does not need to be rebuilt or re-imported.
+  * **Dedicated Offline Stream Scanner:** An isolated batch script streams the raw pre-evaluated PGN archive (leveraging existing Lichess `%eval` tags) without requiring new Stockfish CPU cycles.
+  * **The Evaluation Corridor Filter:** Identifies high-tension games maintaining an evaluation corridor under a 1-pawn advantage ($|\text{eval}| \le 1.0$) through move $X$ that suddenly break open due to a tactical blunder or endgame breakthrough.
+  * **Isolated Storage (`endgame_sample_lines`):** For the small fraction (~2%–5%) of qualifying games, the script extracts and stores **only Moves 26+**, linking them to the Move 25 parent FEN. The main opening tree remains lean, while accumulating an elite library of practical endgame conversions.
+* **Execution Timing & Milestone Priority:**
+  * **Scheduled for MVP 3 (Batch Content for Tabiya Sparring):** Run as an offline batch job when implementing the *Tabiya Takeover / Interactive Sparring* mode in MVP 3.
+  * Keeps engineering 100% focused on **MVP 1.5** (Errors & Sacrifices on Example Lines) and **MVP 2** (The Fitting View & Paywall Gate) without premature content accumulation.
+
 ---
 
 ## 3. Alternative Commercial Milestone Sequence for Reference
