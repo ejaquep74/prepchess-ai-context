@@ -16,8 +16,9 @@
 * **Interleaved Active Recall:** Training decks mix Defensive Awareness and Offensive Refutation using an SM-2 / Leitner Spaced Repetition engine.
 
 
-## 4. Validated Technology Stack
-The "Hollow Frontend" relies on the following approved tools to handle chess logic and presentation without breaking the architectural constraints:
+## 4. Proposed Frontend Technology Stack [PROPOSED / UNDER EVALUATION]
+> **Status:** Proposed Target Stack. Currently under evaluation for `prepchess-ui`.
+The "Hollow Frontend" evaluates the following tools to handle chess logic and presentation without breaking the architectural constraints:
 * **Base Framework:** React + Vite, inspired by the GPL-3 `OpeningTree` codebase architecture.
 * **Chess Logic:** `chess.js` handles move validation and localized board logic.
 * **Board Rendering:** `react-chessboard` renders the FEN and graphical overlays (arrows/squares).
