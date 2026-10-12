@@ -97,7 +97,7 @@ The backend already has foundational infrastructure in `ExampleLinesController.j
 
 **Query Parameters:**
 - `fen: <string>` (Target position FEN)
-- `category: <string>` (`BASIC_ERRORS` | `SACRIFICES` | `TRAPS`)
+- `category: <string>` (`BASIC_ERRORS` | `BASIC_ERRORS_DFS` | `SACRIFICES` | `TRAPS`)
 - `side: <string>` (`OPPONENT` | `PLAYER` | `ALL`, default: `OPPONENT`)
 - `errorLevels: <string>` (Comma-separated e.g. `BLUNDER,MISTAKE,INACCURACY`, default: `BLUNDER,MISTAKE`)
 - `percentile: <int>` (Default: `100`)
